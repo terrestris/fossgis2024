@@ -1,0 +1,28 @@
+name: update-pages
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  update-pages:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout sources 🔰
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js 👷🏻
+        uses: actions/setup-node@v3
+      
+      - name: Build examples
+        run: |
+          npm ci --legacy-peer-deps
+          npm run build 
+
+      - name: Deploy gh-pages 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          branch: gh-pages
+          folder: dist
