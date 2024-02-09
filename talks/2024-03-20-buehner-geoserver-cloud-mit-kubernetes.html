@@ -1,0 +1,109 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>GeoServer Cloud mit Kubernetes</title>
+
+	<link rel="stylesheet" href="../reveal.js/dist/reset.css">
+	<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="../reveal.js/dist/theme/league.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="start" data-background="/img/gs-cloud-bg.svg" data-background-size="contain"></section>
+
+			<section id="title" data-background="/img/gs-cloud-bg.svg" data-background-size="contain"
+				data-background-opacity="0.3">
+				<h1>GeoServer Cloud<br>mit Kubernetes</h1>
+				<p style="margin-top: 1em;">
+					Nils Bühner, terrestris
+				</p>
+				<p style="font-size: 0.7em;">
+					FOSSGIS 2024 | 20. M&auml;rz 2024 | Hamburg
+				</p>
+			</section>
+
+			<section id="toc">
+				<h3>Vorschau</h3>
+				<ul>
+					<li>Kurze Vorstellung</li>
+					<li>Cloud-Probleme des "klassischen" GeoServer</li>
+					<li>Deswegen: GeoServer Cloud</li>
+					<li>Deployment am Beispiel Kubernetes</li>
+				</ul>
+			</section>
+
+			<section id="me">
+				<h3>Nils Bühner</h3>
+				<div style="display: flex">
+
+					<ul style="flex: 3">
+						<li>Informatiker</li>
+						<li>Entwickler bei <a href="https://www.terrestris.de/">terrestris</a></li>
+						<li>Maintainer des "offiziellen" Docker GeoServer Images</li>
+						<li>Schwerpunkte
+							<ul>
+								<li>GeoServer</li>
+								<li>Java</li>
+								<li>Docker</li>
+							</ul>
+						</li>
+					</ul>
+					<div style="flex: 2; font-size: 0.5em;">
+						<img src="/img/nb.png" />
+						<a href="mailto:buehner@terrestris.de">buehner@terrestris.de</a> <img
+							style="height: 0.9em;margin:0" src="/assets/mail-logo.png" alt="E-Mail"><br />
+						<a href="https://github.com/buehner/">github.com/buehner</a> <img style="height: 0.9em;margin:0"
+							src="/assets/github-logo.png" alt="GitHub"><br />
+					</div>
+				</div>
+			</section>
+
+			<section id="geoserver" data-background="/img/gs.svg" data-background-size="contain"
+				data-background-opacity="0.3">
+				<h3>GeoServer</h3>
+				<div>
+
+					<ul>
+						<li>Open Source Server für Geodaten</li>
+						<li>Erweiterbar durch Plugins/Extensions</li>
+						<li>OGC-Standards
+							<ul>
+								<li>WMS</li>
+								<li>WFS</li>
+								<li>WPS</li>
+								<li>… mehr</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<script src="../reveal.js/dist/reveal.js"></script>
+	<script src="../reveal.js/plugin/notes/notes.js"></script>
+	<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
