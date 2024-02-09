@@ -23,7 +23,7 @@ jobs:
           npm run build
 
       - name: Deploy gh-pages 🚀
-        uses: JamesIves/github-pages-deploy-action@v4
+        uses: JamesIves/github-pages-deploy-action@65b5dfd4f5bcd3a7403bbc2959c144256167464e # v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           branch: gh-pages
