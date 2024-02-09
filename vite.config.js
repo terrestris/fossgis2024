@@ -13,7 +13,7 @@ const dirs = [
 
 const input = {
   main: resolve(__dirname, 'index.html')
-}
+};
 
 dirs.forEach(dir => {readdirSync(dir, {encoding: 'utf8', withFileTypes: true})
   .filter(file => file.name.endsWith('.html'))
@@ -24,6 +24,7 @@ dirs.forEach(dir => {readdirSync(dir, {encoding: 'utf8', withFileTypes: true})
 
 export default defineConfig({
   base: '',
+  assetsInclude: ['**/*.svg'],
   build: {
     rollupOptions: {
       input
