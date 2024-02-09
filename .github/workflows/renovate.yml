@@ -15,3 +15,6 @@ jobs:
         with:
           configurationFile: .github/renovate.json
           token: ${{ secrets.RENOVATE_TOKEN }}
+        env:
+          RENOVATE_AUTODISCOVER: true
+          RENOVATE_AUTODISCOVER_FILTER: "/terrestris/fossgis2024/"
