@@ -75,6 +75,7 @@
 					<ul>
 						<li>Open Source Server für Geodaten</li>
 						<li>Erweiterbar durch Plugins/Extensions</li>
+						<li>Monolithische Applikation</li>
 						<li>OGC-Standards
 							<ul>
 								<li>WMS</li>
@@ -85,6 +86,78 @@
 						</li>
 					</ul>
 				</div>
+			</section>
+
+			<section id="geoserver-classic-cloud" >
+				<h3>Monolithischer GeoServer in der Cloud</h3>
+				<div style="display: flex">
+					<div>
+						<div>
+							<img src="../img/gs-classic-cloud.png">
+						</div>
+						<div style="font-size: 0.4em;">Quelle: "Scaling GeoServer in the cloud clustering state of the art"<br>FOSS4G 2023 (<a href="https://speakerdeck.com/simboss/scaling-geoserver-in-the-cloud-clustering-state-of-the-art-foss4g-2023" target="_blank">Slides</a>, <a href="https://www.youtube.com/watch?v=zlQRHnaz6fY" target="_blank">Video</a>)</div>
+					</div>
+					<div>
+						<div style="font-size: 0.7em; margin-top: 1em;">Probleme</div>
+						<div style="font-size: 0.6em; margin: 1em 0 0 1em;">
+							<ul>
+								<li>Proxy/Load Balancing</li>
+								<li>Synchronisierung zwischen den Instanzen</li>
+								<li>Monitoring, Logging & Caching</li>
+								<li>Kompatibilität von Extensions?</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="geoserver-cloud">
+				<h3>GeoServer Cloud</h3>
+				<div>
+					<ul>
+						<li><a href="https://github.com/geoserver/geoserver-cloud" target="_blank">https://github.com/geoserver/geoserver-cloud</a></li>
+						<li>Eigenes Projekt "on top"</li>
+						<li>Cloud native</li>
+						<li>DevOps friendly</li>
+						<li>Wiederverwendung bestehender Implementierungen</li>
+						<li>Entkopplung hin zu individuell skalierbaren Microservices!</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="geoserver-cloud-architecture" >
+				<h3>GeoServer Cloud Architektur</h3>
+				<div style="display: flex">
+					<div>
+						<div>
+							<img src="../img/gs-cloud-architecture.svg" style="width: 75%;">
+						</div>
+						<div style="font-size: 0.4em;">Quelle: <a href="https://github.com/geoserver/geoserver-cloud/blob/main/docs/img/gs_cloud_architecture_diagram.svg" target="_blank">Github</a></div>
+					</div>
+					<div>
+						<div style="font-size: 0.8em;">Microservices</div>
+						<div style="font-size: 0.6em; margin: 1em 0 1em 0;">
+							<ul>
+								<li>Web UI</li>
+								<li>WMS</li>
+								<li>WFS</li>
+								<li>WPS</li>
+								<li>WCS</li>
+								<li>GWC</li>
+								<li>REST</li>
+							</ul>
+						</div>
+						<div style="font-size: 0.8em;">Außerdem:</div>
+						<div style="font-size: 0.6em; margin: 1em 0 0 0;">
+							<ul>
+								<li>Front Gateway</li>
+								<li>Event Bus (RabbitMQ)</li>
+								<li>Catalog/Config (XML oder JDBC)</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
 			</section>
 		</div>
 	</div>
