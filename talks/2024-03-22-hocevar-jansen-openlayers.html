@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>OpenLayers — mehr als nur Karten im Web</title>
+
+	<link rel="stylesheet" href="../reveal.js/dist/reset.css">
+	<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="../reveal.js/dist/theme/night.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+
+	<style>
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal h4,
+		.reveal h5,
+		.reveal h6 {
+			text-transform: none;
+		}
+
+		iframe {
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="start" data-background="../img/ol.svg" data-background-size="contain"></section>
+
+			<section id="title" data-background="../img/ol.svg" data-background-size="contain"
+				data-background-opacity="0.3">
+				<h1>OpenLayers</h1>
+				<h2>mehr als nur Karten im Web</h2>
+				<p style="margin-top: 2em;">
+					Andreas Hocevar, w3geo<br>
+					Marc Jansen, terrestris
+				</p>
+				<p style="font-size: 0.7em;">
+					FOSSGIS 2024 | 22. M&auml;rz 2024 | Hamburg
+				</p>
+			</section>
+
+			<section id="toc">
+				<h3>Vorschau</h3>
+				<ul>
+					<li>Kurze Vorstellung</li>
+					<li>…</li>
+				</ul>
+			</section>
+
+			<section id="andreas-hocevar">
+				<h3>Andreas Hocevar | w3geo</h3>
+				<div style="display: flex">
+					<ul style="flex: 3">
+						<li>Gesch&auml;ftsf&uuml;hrer <a href="https://www.w3geo.at/">w3geo</a></li>
+						<li>Derzeit aktivster OpenLayers Entwickler</li>
+						<li>Proj4.js, ol-mapbox-style, geotiff.js …</li>
+						<li>Geospatial Expert</li>
+						<li>JavaScript Entwickler aus Leidenschaft</li>
+					</ul>
+					<div style="flex: 2; font-size: 0.5em;">
+						<img src="../img/andreas-hocevar.jpeg" />
+						<a href="mailto:ahocevar@w3geo.at">ahocevar@w3geo.at</a> <img style="height: 0.9em;margin:0;filter: invert(1);"
+							src="../img/mail-logo.png" alt="E-Mail"><br />
+						<a href="https://github.com/ahocevar/">github.com/ahocevar</a> <img
+							style="height: 0.9em;margin:0;filter: invert(1);" src="../img/github-logo.png" alt="GitHub"><br />
+					</div>
+				</div>
+			</section>
+
+			<section id="marc-jansen">
+				<h3>Marc Jansen | terrestris</h3>
+				<div style="display: flex">
+					<ul style="flex: 3">
+						<li>Gesch&auml;ftsf&uuml;hrer <a href="https://www.terrestris.de/">terrestris</a></li>
+						<li>Kernentwickler &amp; PSC OpenLayers</li>
+						<li>GeoExt, SHOGun, GeoStyler …</li>
+						<li>Sprecher &amp; Trainer <br /> national &amp; international</li>
+						<li>OSGeo Foundation Charter Member</li>
+					</ul>
+					<div style="flex: 2; font-size: 0.5em;">
+						<img src="../img/mj.jpeg" />
+						<a href="mailto:jansen@terrestris.de">jansen@terrestris.de</a> <img
+							style="height: 0.9em;margin:0;filter: invert(1);" src="../img/mail-logo.png" alt="E-Mail"><br />
+						<a href="https://github.com/marcjansen/">github.com/marcjansen</a> <img
+							style="height: 0.9em;margin:0;filter: invert(1);" src="../img/github-logo.png" alt="GitHub"><br />
+					</div>
+				</div>
+			</section>
+
+			<section id="thanks-questions">
+				<h2>Danke!</h2>
+				<h2>Fragen oder Anmerkungen?</h2>
+			</section>
+
+			<section id="imprint" style="font-size: smaller;">
+				<h3>Impressum</h3>
+				<h5>Autoren &amp; Kontakt</h5>
+				<div style="display: flex;">
+					<address style="flex: 1">
+						<strong>Marc Jansen</strong><br>
+						terrestris GmbH &amp; Co. KG<br>
+						Kölnstr. 99<br>
+						53111 Bonn<br>
+						Deutschland<br>
+						<a href="mailto:jansen@terrestris.de">jansen@terrestris.de</a><br>
+					</address>
+					<address style="flex: 1">
+						<strong>Andreas Hocevar</strong><br>
+						w3geo GmbH<br>
+						Seidengasse 46<br>
+						1070 Wien<br>
+						Österreich<br>
+						<a href="mailto:ahocevar@w3geo.at">ahocevar@w3geo.at</a>
+					</address>
+				</div>
+				<h5 style="margin-top: 1em;">Lizenz</h5>
+				<p>Diese Folien sind unter <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a>
+					veröffentlicht.
+				</p>
+				<p>
+					<a href="https://terrestris.github.io/fossgis2024/pdf/Hocevar-Jansen-OpenLayers-mehr-als-nur-Karten-im-Web.pdf">PDF</a>, <a href="https://terrestris.github.io/fossgis2024/talks/2024-03-22-hocevar-jansen-openlayers.html">HTML</a>, <a href="https://github.com/terrestris/fossgis2024">Repository</a>
+				</p>
+		</div>
+		</section>
+
+	</div>
+	</div>
+
+	<script src="../reveal.js/dist/reveal.js"></script>
+	<script src="../reveal.js/plugin/notes/notes.js"></script>
+	<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
