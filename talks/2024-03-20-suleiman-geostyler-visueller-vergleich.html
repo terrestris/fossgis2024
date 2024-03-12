@@ -1,0 +1,236 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="../public/img/geostyler_logo.svg">
+
+		<title>GeoStyler - Ein visueller Vergleich</title>
+
+		<link rel="stylesheet" href="../public/reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../public/reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../public/reveal.js/dist/theme/simple.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../public/reveal.js/plugin/highlight/monokai.css">
+    <style>
+      section {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        top: unset !important;
+        height: 100%;
+      }
+      .slide-header {
+
+      }
+
+      .slide-content-default {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .slide-content-horizontal {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: small;
+      }
+
+      footer img {
+        margin: 0 !important;
+      }
+
+      .blurry-banner {
+        width: 100%;
+        backdrop-filter: blur(8px) grayscale(100%);
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 40px;
+      }
+
+      .gap {
+        gap: 100px;
+      }
+
+      .r-stack img {
+        max-height: 850px;
+      }
+
+      .img-shadow {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .code-small>code {
+        overflow: hidden !important;
+      }
+
+      .reveal section a.email {
+        background-image: url("../public/assets/mail-logo.png");
+        background-position: left 0.55em;
+      }
+
+      .reveal section a.github {
+        background-image: url("../public/assets/github-logo.png");
+      }
+
+      .reveal section a.url {
+        background-image: url("../public/assets/url-logo.png");
+      }
+
+      .reveal section a.npm {
+        background-image: url("../public/assets/npm-logo.svg");
+        background-position: left 0.55em;
+      }
+
+      .reveal section a.twitter {
+        background-image: url("../public/assets/twitter-logo.png");
+      }
+
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+        <section id="title"
+          data-background-image="../public/img/geostyler_logo.svg"
+          data-background-size="auto 85%">
+          <div class="fragment slide-content-default blurry-banner" style="justify-content: center; padding: 0;">
+            <h1>GeoStyler - Ein visueller Vergleich</h1>
+            <p>
+              <small>Jan Suleiman, terrestris GmbH &amp; Co. KG</small> <br />
+            </p>
+              <small>GeoStyler - Ein visueller Vergleich, FOSSGIS 2024, Hamburg</small>
+          </div>
+        </section>
+
+        <section>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h2>Jan Suleiman</h2>
+            <div class="slide-content-horizontal gap" style="flex: unset; justify-content: center; align-items: start;">
+              <div>
+                <img src="../public/img/js.jpeg" class="plain" width="200"/><br />
+                <small>
+                  <a class="email" href="mailto:suleiman@terrestris.de">suleiman@terrestris.de</a><br />
+                  <a class="github" href="https://github.com/jansule/">@jansule</a><br />
+                </small><br />
+              </div>
+              <ul>
+                <li>M.Sc. Geoinformatics</li>
+                <li>Full-Stack Developer<br />@terrestris, Bonn, Germany</li>
+                <li>GeoStyler Core Developer</li>
+                <li>OSGeo Charter Member</li>
+              </ul>
+            </div>
+          </div>
+          <footer>
+            <img src="../public/img/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - Ein visueller Vergleich, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>Was ist GeoStyler?</h2>
+          <div class="slide-content-default">
+            <span>Stilkonvertierer</span>
+            <img src="../public/img/geostyler-parsers.png" height="600px"/>
+          </div>
+          <footer>
+            <img src="../public/img/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - Ein visueller Vergleich, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>Visueller Vergleich</h2>
+          <div class="slide-content-default">
+            <span>TODO add images here</span>
+          </div>
+          <footer>
+            <img src="../public/img/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - Ein visueller Vergleich, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>GeoStyler Code Sprint 2024</h2>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h4>It's all about the style - again</h4>
+            <small>Wann? 17. - 21.06.2024</small>
+            <small>Wo? Paris, Frankreich</small>
+            <img src="../public/img/geostyler_logo.svg" />
+            <small>Weitere Infos auf <a href="https://geostyler.org">geostyler.org</a></small>
+          </div>
+          <footer>
+            <img src="../public/img/geostyler_logo.svg" height="30px"/>
+            <span>GeoStyler - Ein visueller Vergleich, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2>Imprint</h2>
+          <div class="slide-content">
+            <h4>Autor</h4>
+            <div class="slide-content-horizontal" style="flex: unset">
+              <address style="text-align: left">
+                <strong>Jan Suleiman</strong><br />
+                <span style="font-size: smaller;">
+                  terrestris GmbH &amp; Co. KG<br />
+                  K&ouml;lnstr. 99, 53111 Bonn<br />
+                  suleiman@terrestris.de
+                </span>
+              </address>
+            </div>
+          </div>
+          <div class="slide-content" style="flex: unset">
+            <h4 style="clear:both;">Lizenz</h4>
+            <p id="license">
+              <small>
+                Die Folien sind unter der <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+                Lizenz veröffentlicht.<br />
+                <a href="https://terrestris.github.io/fossgis2024/">terrestris.github.io/fossgis2024</a><br />
+                <a href="https://github.com/terrestris/fossgis2024">git repository</a>
+              </small>
+            </p>
+          </div>
+        </section>
+			</div>
+		</div>
+
+		<script src="../public/reveal.js/dist/reveal.js"></script>
+		<script src="../public/reveal.js/plugin/notes/notes.js"></script>
+		<script src="../public/reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../public/reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+        width: '100%',
+        height: '100%',
+				hash: true,
+        controlsTutorial: false,
+        transition: 'fade',
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
