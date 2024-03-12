@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<title>KI, GIS, EO & FOSS: Erfahrungen & offene Fragen rund um artifizielle Intelligenz</title>
+
+	<link rel="stylesheet" href="../reveal.js/dist/reset.css">
+	<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+	<link rel="stylesheet" href="../reveal.js/dist/theme/beige.css">
+
+	<!-- Theme used for syntax highlighted code -->
+	<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+
+	<style>
+		.reveal h1,
+		.reveal h2,
+		.reveal h3,
+		.reveal h4,
+		.reveal h5,
+		.reveal h6 {
+			text-transform: none;
+		}
+
+		iframe {
+			margin: 0;
+			padding: 0;
+			border: none;
+		}
+		.attribution {
+			font-size: 0.5em;
+			bottom: 0;
+			display: block;
+		}
+		blockquote footer {
+			text-align: right;
+		}
+		blockquote p {
+			text-align: left;
+		}
+		blockquote p em {
+			text-shadow: 0 0 3px darkorange
+		}
+	</style>
+</head>
+
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section id="start" data-background="../img/ki.gif" data-background-size="contain"></section>
+
+			<section id="quote-steve-c">
+				<blockquote class="r-stretch">
+					<p>
+				First OpenAI came for the artists and I did not speak out - because I was not an artist.<br>
+Then OpenAI came for the writers and I did not speak out - because I was not a writer.<br>
+Then OpenAI came for the visual effects artists and I did not speak out - because I was not a visual effects artist.<br>
+Then OpenAI came for the programmers - and there was nobody left to speak out for them.
+</p>
+<footer>—Steve Coast</footer>
+</blockquote>
+				<p class="attribution">Quelle: <a href="https://twitter.com/SteveC/status/1761554509916967285">https://twitter.com/SteveC/status/1761554509916967285</a></p>
+			</section>
+
+			<section id="quote-bill-g">
+				<blockquote class="r-stretch">
+					<p>
+						<em>Generative AI</em> has the potential to change the world in ways that we can&apos;t even imagine. It has the power to create new ideas, products, and services that will make our lives easier, more productive, and more creative. It also has the <em>potential to solve</em> some of the world&apos;s biggest problems, such as <em>climate change, poverty, and disease</em>.
+					</p>
+					<footer>—Bill Gates</footer>
+				</blockquote>
+				<p class="attribution">Quelle: <a href="https://www.forbes.com/sites/bernardmarr/2023/11/29/the-most-thought-provoking-generative-artificial-intelligence-quotes-of-2023/">forbes.com</a>, eig. Hervorhebung</p>
+			</section>
+
+			<section id="title" data-background="../img/ki.gif" data-background-size="contain"
+				data-background-opacity="0.3">
+				<h1>KI, GIS, EO & FOSS</h1>
+				<h2>Erfahrungen & offene Fragen rund um artifizielle Intelligenz</h2>
+				<p style="margin-top: 2em;">
+					Carmen Tawalika, mundialis<br>
+					Marc Jansen, terrestris
+				</p>
+				<p style="font-size: 0.7em;">
+					FOSSGIS 2024 | 21. M&auml;rz 2024 | Hamburg
+				</p>
+			</section>
+
+			<section id="toc">
+				<h3>Über was wir sprechen wollen:</h3>
+				<ul>
+					<li>Begriffsklärungen</li>
+					<li>Einige Produkte / Software</li>
+					<li>Beispiele</li>
+					<li>Offene Fragen</li>
+				</ul>
+			</section>
+
+			<section id="thanks-questions">
+				<h2>Danke!</h2>
+				<h1>Fragen oder Anmerkungen?</h1>
+			</section>
+
+			<section id="imprint" style="font-size: smaller;">
+				<h3>Impressum</h3>
+				<h5>Autoren &amp; Kontakt</h5>
+				<div style="display: flex;">
+					<address style="flex: 1">
+						<strong>Carmen Tawalika</strong><br>
+						mundialis GmbH &amp; Co. KG<br>
+						Kölnstr. 99<br>
+						53111 Bonn<br>
+						Deutschland<br>
+						<a href="mailto:tawalika@mundialis.de">tawalika@mundialis.de</a><br>
+					</address>
+					<address style="flex: 1">
+						<strong>Marc Jansen</strong><br>
+						terrestris GmbH &amp; Co. KG<br>
+						Kölnstr. 99<br>
+						53111 Bonn<br>
+						Deutschland<br>
+						<a href="mailto:jansen@terrestris.de">jansen@terrestris.de</a><br>
+					</address>
+				</div>
+				<h5 style="margin-top: 1em;">Lizenz</h5>
+				<p>Diese Folien sind unter <a href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA</a>
+					veröffentlicht.
+				</p>
+				<p>
+					<a href="https://terrestris.github.io/fossgis2024/pdf/2024-03-21-tawalika-jansen-ki-gis-eo-foss-erfahrungen-fragen.pdf">PDF</a>, <a href="https://terrestris.github.io/fossgis2024/talks/2024-03-21-tawalika-jansen-ki-gis-eo-foss-erfahrungen-fragen.html">HTML</a>, <a href="https://github.com/terrestris/fossgis2024">Repository</a>
+				</p>
+		</div>
+		</section>
+
+	</div>
+	</div>
+
+	<script src="../reveal.js/dist/reveal.js"></script>
+	<script src="../reveal.js/plugin/notes/notes.js"></script>
+	<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+	<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+	<script>
+		// More info about initialization & config:
+		// - https://revealjs.com/initialization/
+		// - https://revealjs.com/config/
+		Reveal.initialize({
+			hash: true,
+
+			// Learn about plugins: https://revealjs.com/plugins/
+			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
+		});
+	</script>
+</body>
+
+</html>
