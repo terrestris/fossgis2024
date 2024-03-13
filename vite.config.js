@@ -8,7 +8,8 @@ import { fileURLToPath } from 'url';
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const dirs = [
-  join(__dirname, 'talks')
+  join(__dirname, 'talks'),
+  join(__dirname, 'examples')
 ];
 
 const input = {

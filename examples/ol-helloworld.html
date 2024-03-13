@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    #picture {
+      position: absolute;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="map">
+    <div id="picture" class="ol-unselectable ol-control">
+      <button title="Take picture with location"><img width="16" height="16" src="../img/camera.svg"></button>
+    </div>
+  </div>
+
+  <div id="picture-container" style="display:none" class="uppy-Root" dir="ltr">
+    <div
+      class="uppy-Dashboard uppy-Dashboard--animateOpenClose uppy-Dashboard--modal uppy-size--md uppy-size--height-md uppy-Dashboard--isInnerWrapVisible"
+      data-uppy-theme="light" data-uppy-num-acquirers="1" data-uppy-drag-drop-supported="true" aria-hidden="false"
+      aria-disabled="false" aria-label="Uppy Dashboard Window (Press escape to close)">
+      <div aria-hidden="true" class="uppy-Dashboard-overlay" tabindex="-1"></div>
+      <div class="uppy-Dashboard-inner" aria-modal="true" role="dialog"><button
+          class="uppy-u-reset uppy-Dashboard-close" type="button" aria-label="Close Modal" title="Close Modal"><span
+            aria-hidden="true">&times;</span></button>
+        <div class="uppy-Dashboard-innerWrap">
+          <div class="uppy-Dashboard-AddFiles">
+            <img width="100%">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="./ol-helloworld.js"></script>
+</body>
+
+</html>
