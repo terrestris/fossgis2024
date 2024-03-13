@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="de">
 
 <head>
 	<meta charset="utf-8">
@@ -29,6 +29,14 @@
 			padding: 0;
 			border: none;
 		}
+
+		.attribution {
+			font-size: 0.5em;
+			display: flex;
+			bottom: 0;
+			left: 0;
+			display: block;
+		}
 	</style>
 </head>
 
@@ -39,8 +47,8 @@
 
 			<section id="title" data-background="../img/ol-describe-map.svg" data-background-size="contain"
 				data-background-opacity="0.3">
-				<h1>ol-describe-map</h1>
-				<h2>Mehr Web-Accessibility für OpenLayers Karten</h2>
+				<h1 lang="en"><code>ol-describe-map</code></h1>
+				<h2>Mehr Web-<span lang="en">Accessibility</span> für <span lang="en">OpenLayers</span> Karten</h2>
 				<p style="margin-top: 2em;">
 					Marc Jansen, terrestris
 				</p>
@@ -50,9 +58,97 @@
 			</section>
 
 			<section id="toc">
-				<h3>ol-describe-map</h3>
+				<h3>Über was ich sprechen möchte</h3>
 				<ul>
-					<li>…</li>
+					<li>Ausgangslage</li>
+					<li lang="en"><code>ol-describe-map</code></li>
+					<li>Beispiele</li>
+					<li>Fazit &amp; Ausblick</li>
+				</ul>
+			</section>
+
+			<section aria-describedby="ausgangslage" data-background="../img/some-geoportal.png"
+				data-background-size="auto 95%">
+			</section>
+
+			<section id="ausgangslage">
+				<p style="font-size: 1.8em">Ein zufällig ausgewähltes, vielleicht repräsentatives, gut aussehendes und
+					vielfältiges WebGIS / Geoportal</p>
+			</section>
+
+			<section id="ausgangslage">
+				<h1>Ausgangslage</h1>
+				<ul>
+					<li>Kartenanwendungen im Web sind …
+						<ul>
+							<li>visuelle Hingucker,</li>
+							<li>voller Funktionalität, und</li>
+							<li>vielleicht bzgl. Barrierearmut optimierbar?</li>
+						</ul>
+					</li>
+					<li>Kernaspekte: Visualisierung und Interaktion…</li>
+					<li>…ist damit ein gewisses Maß an Barrieren inhärent?</li>
+				</ul>
+			</section>
+
+			<section>
+				<p style="font-size: 1.8em">Kann man etwas generisches entwickeln, was
+					erweiterbar ist, aber auch <span lang="en">out-of-the-box</span> die <abbr lang="en"
+						title="Accessibility">A11y</abbr>-Situation verbessert?</p>
+			</section>
+
+			<section id="ol-describe-map">
+				<h3 lang="en"><code>ol-describe-map</code></h3>
+				<ul>
+					<img style="width: 200px;float:right" src="../img/ol-describe-map.svg">
+					<li>Mini-Bibliothek für <span lang="en">OpenLayers</span></li>
+					<li>Erzeugt eine textuelle Beschreibung einer <span lang="en">OpenLayers</span> Karte (<span
+							lang="en">View</span> und <span lang="en">Layer</span>)</li>
+					<li>Setzt <abbr lang="en" title="Accessible Rich Internet Applications">ARIA</abbr>-Attribute in
+						HTML-Element</li>
+					<li>Auch für <abbr title="search engine optimization" lang="en">SEO</abbr> nützlich</li>
+					<li><a
+							href="https://github.com/terrestris/ol-describe-map">https://github.com/terrestris/ol-describe-map</a>
+					</li>
+					<li><a
+							href="https://www.npmjs.com/package/@terrestris/ol-describe-map">https://www.npmjs.com/package/@terrestris/ol-describe-map</a>
+					</li>
+					<li>jung, konfigurierbar & erweiterbar</li>
+				</ul>
+			</section>
+
+			<section id="example-code">
+				<h2>Trivialer geht's kaum</h2>
+				<pre><code class="js">// import the describe function
+import { describe } from '@terrestris/ol-describe-map';
+
+// create an OpenLayers map (left out for brevity), then:
+let desc = await describe(map);
+// …will also update ARIA attributes behind the scenes
+
+// call as often as you think is necessary</code></pre>
+			</section>
+
+			<section id="examples">
+				<iframe class="stretch" src="https://terrestris.github.io/ol-describe-map/main/examples/nominatim.html"></iframe>
+			</section>
+
+			<section id="examples">
+				<iframe class="stretch" src="https://terrestris.github.io/ol-describe-map/main/examples/vector.html"></iframe>
+			</section>
+
+			<section id="examples">
+				<iframe class="stretch" src="https://terrestris.github.io/ol-describe-map/main/examples/wms-verbose.html"></iframe>
+			</section>
+
+			<section id="ausblick">
+				<h1>Ausblick</h1>
+				<ul>
+					<li>Feedback echter Nutzer mit z.B. Sehbehinderungen</li>
+					<li><code>aria-description</code> / <code>aria-detail</code> ?</li>
+					<li>Mehr OGC API Support</li>
+					<li>Nutzung in Projekten, gerne auch Euren</li>
+					<li>Feedback, Ideen, Kritik usw.? Gerne mitmachen!</li>
 				</ul>
 			</section>
 
@@ -80,7 +176,11 @@
 					veröffentlicht.
 				</p>
 				<p>
-					<a href="https://terrestris.github.io/fossgis2024/pdf/jansen-ol-describe-map-web-accessibility-openlayers.pdf">PDF</a>, <a href="https://terrestris.github.io/fossgis2024/talks/2024-03-20-jansen-ol-describe-map.html">HTML</a>, <a href="https://github.com/terrestris/fossgis2024">Repository</a>
+					<a
+						href="https://terrestris.github.io/fossgis2024/pdf/jansen-ol-describe-map-web-accessibility-openlayers.pdf">PDF</a>,
+					<a
+						href="https://terrestris.github.io/fossgis2024/talks/2024-03-20-jansen-ol-describe-map.html">HTML</a>,
+					<a href="https://github.com/terrestris/fossgis2024">Repository</a>
 				</p>
 		</div>
 		</section>
