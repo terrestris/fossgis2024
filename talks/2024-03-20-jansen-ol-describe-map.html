@@ -61,7 +61,7 @@
 				<h3>Über was ich sprechen möchte</h3>
 				<ul>
 					<li>Ausgangslage</li>
-					<li lang="en"><code>ol-describe-map</code></li>
+					<li lang="en"><code style="font-size: 85%;">ol-describe-map</code></li>
 					<li>Beispiele</li>
 					<li>Fazit &amp; Ausblick</li>
 				</ul>
@@ -126,28 +126,38 @@ import { describe } from '@terrestris/ol-describe-map';
 let desc = await describe(map);
 // …will also update ARIA attributes behind the scenes
 
-// call as often as you think is necessary</code></pre>
+// call as often as you think is necessary
+// e.g. on certain map-events, or scheduled</code></pre>
 			</section>
 
-			<section id="examples">
+			<section aria-describedby="example-description">
+				<img src="../img/describe-example.png" class="stretch">
+			</section>
+
+			<section>
+				<p id="example-description" class="r-fit-text">The map is centered at Hamburg, 21129, Germany. The lower left of the visible map extent is at Cloppenburg district, Lower Saxony, Germany. In the upper left corner of the visible extent, Schleswig-Holstein, Germany is located. Landkreis Rostock, Mecklenburg-Vorpommern, Germany is in the upper right corner of the map. The lower right corner of the map shows Stendal, Saxony-Anhalt, Germany. Place determination uses a Nominatim service from terrestris – https://nominatim.terrestris.de/ –, based on data from the OpenStreetMap project, © OpenStreetMap contributors.The map contains 3 layers. The first layer is a tile-layer (pre-rendered, tiled images in grids organized by zoom levels). It uses an OpenStreetMap-source as source for it's data. This layer is the lowest in the drawing order, other layers are drawn atop of it. The second layer is an image-layer (server-rendered & for arbitrary extents and resolutions). It uses an ImageWMS-source as source for it's data. This layer is a composition of 3 layers, those are: "vg5000_krs" (title/abstract: "Kreis"), "vg5000_rbz" (title/abstract: "Regierungsbezirk"), "vg5000_lan" (title/abstract: "Bundesland"). The third layer is a vector-layer (vector data that is rendered client-side). It uses a Vector-source as source for it's data. The layer source contains 2,054 features. A total number of 103 (5.01%) intersect with the current map-extent; actually rendered were 2 (1.94%) features. From the rendered features basic statistical information for the following properties can be obtained: 'pop', 'area'. Property 'pop': the minimal value is 566,573 (feature named 'Bremen') while the maximum value is 1,845,229 (for the feature with name 'Hamburg'). The average value is 1,205,901 and the sum is 2,411,802. Property 'area': the minimal value is 326.73 (feature named 'Bremen') while the maximum value is 755.22 (for the feature with name 'Hamburg'). The average value is 540.975 and the sum is 1,081.95. This layer is top-most in the drawing order.</p>
+			</section>
+
+			<section>
 				<iframe class="stretch" src="https://terrestris.github.io/ol-describe-map/main/examples/nominatim.html"></iframe>
 			</section>
 
-			<section id="examples">
+			<section>
 				<iframe class="stretch" src="https://terrestris.github.io/ol-describe-map/main/examples/vector.html"></iframe>
 			</section>
 
-			<section id="examples">
+			<section>
 				<iframe class="stretch" src="https://terrestris.github.io/ol-describe-map/main/examples/wms-verbose.html"></iframe>
 			</section>
 
 			<section id="ausblick">
 				<h1>Ausblick</h1>
 				<ul>
-					<li>Feedback echter Nutzer mit z.B. Sehbehinderungen</li>
-					<li><code>aria-description</code> / <code>aria-detail</code> ?</li>
+					<li>Feedback echter Nutzer mit z.B. Sehbehinderungen, bzw. zur Informationsmenge</li>
+					<li><code>aria-description</code> / <code>aria-detail</code> / <code>aria-describedby</code> ?</li>
 					<li>Mehr OGC API Support</li>
-					<li>Nutzung in Projekten, gerne auch Euren</li>
+					<li>KI ?</li>
+					<li>Nutzung in der Praxis</li>
 					<li>Feedback, Ideen, Kritik usw.? Gerne mitmachen!</li>
 				</ul>
 			</section>
