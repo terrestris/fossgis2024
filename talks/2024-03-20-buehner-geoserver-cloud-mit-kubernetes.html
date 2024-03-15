@@ -47,7 +47,7 @@
 
 					<ul style="flex: 3">
 						<li>Informatiker</li>
-						<li>Entwickler bei <a href="https://www.terrestris.de/">terrestris</a></li>
+						<li>Entwickler bei <a href="https://www.terrestris.de/" target="_blank">terrestris</a></li>
 						<li>Maintainer des "offiziellen" Docker GeoServer Images</li>
 						<li>Schwerpunkte
 							<ul>
@@ -61,17 +61,16 @@
 						<img src="../img/nb.png" />
 						<a href="mailto:buehner@terrestris.de">buehner@terrestris.de</a> <img
 							style="height: 0.9em;margin:0" src="../img/mail-logo.png" alt="E-Mail"><br />
-						<a href="https://github.com/buehner/">github.com/buehner</a> <img style="height: 0.9em;margin:0"
+						<a href="https://github.com/buehner/" target="_blank">github.com/buehner</a> <img style="height: 0.9em;margin:0"
 							src="../img/github-logo.png" alt="GitHub"><br />
 					</div>
 				</div>
 			</section>
 
 			<section id="geoserver" data-background="../img/gs.svg" data-background-size="contain"
-				data-background-opacity="0.3">
+				data-background-opacity="0.2">
 				<h3>GeoServer</h3>
 				<div>
-
 					<ul>
 						<li>Open Source Server für Geodaten</li>
 						<li>Erweiterbar durch Plugins/Extensions</li>
@@ -111,7 +110,8 @@
 				</div>
 			</section>
 
-			<section id="geoserver-cloud">
+			<section id="geoserver-cloud" data-background="../img/gs.svg" data-background-size="contain"
+			data-background-opacity="0.1">
 				<h3>GeoServer Cloud</h3>
 				<div>
 					<ul>
@@ -157,7 +157,85 @@
 						</div>
 					</div>
 				</div>
+			</section>
 
+			<section id="pro-contra">
+				<h3>Pro und Contra</h3>
+				<div style="font-size: 0.9em;">
+					<ul>
+						<li>Vorteile</li>
+						<ul>
+							<li>Mehr Sicherheit durch potenziell kleineren Angriffsvektor</li>
+							<li>Native Einbindung in moderne Cloud-Umgebungen</li>
+							<ul>
+								<li>Skalierbarkeit</li>
+								<li>Verfügbarkeit</li>
+								<li>Gute Monitoring und Telemetrie-Unterstützung</li>
+							</ul>
+						</ul>
+						<li>Nachteile</li>
+						<ul>
+							<li>Kompatibilität von Erweiterungen</li>
+							<li>Komplexeres Setup in Cloud-Umgebung</li>
+							<li>Ggf. erhöhter Wartungsaufwand</li>
+						</ul>
+					</ul>
+				</div>
+			</section>
+
+			<section id="kind">
+				<h3>Kubernetes in Docker</h3>
+					<ul>
+						<li><a href="https://github.com/terrestris/kind-dev-cluster" target="_blank">https://github.com/terrestris/kind-dev-cluster</a></li>
+						<li>Lokaler Kubernetes Cluster</li>
+						<li>"Spielwiese"</li>
+						<li>Vorinstalliert:</li>
+						<ul>
+							<li>ingress-nginx</li>
+							<li>Kubernetes Dashboard</li>
+						</ul>
+						<li>Installation von GeoServer cloud via <a href="https://github.com/terrestris/helm-charts/tree/main/charts/geoserver-cloud" target="_blank">helm chart</a></li>
+					</ul>
+			</section>
+
+			<section id="video-demo">
+				<h3>Zum Schluss: Video-Demo</h3>
+				<ul>
+					<li>Lokalen Kubernetes Cluster starten</li>
+					<li>Login ins Dashboard</li>
+					<li>Installation von GeoServer Cloud</li>
+					<li>Anpassung auf "Nur WMS"</li>
+				</ul>
+			</section>
+
+			<section id="start-kind">
+				<h3>Lokalen Kubernetes cluster starten</h3>
+				<video controls data-src="../video/gs-cloud/01-start-kind.mp4"></video>
+			</section>
+
+			<section id="dashboard-login">
+				<h3>Dashboard login</h3>
+				<video controls data-src="../video/gs-cloud/02-login-dashboard.mp4"></video>
+			</section>
+
+			<section id="install-gs-cloud">
+				<h3>GeoServer cloud mit helm installieren</h3>
+				<video controls data-src="../video/gs-cloud/03-install-gs-cloud.mp4"></video>
+			</section>
+
+			<section id="use-gs-cloud">
+				<h3>GeoServer Cloud GUI nutzen</h3>
+				<video controls data-src="../video/gs-cloud/04-use-gs.mp4"></video>
+			</section>
+
+			<section id="use-wms-only">
+				<h3>WMS only</h3>
+				<video controls data-src="../video/gs-cloud/05-use-only-wms.mp4"></video>
+			</section>
+
+			<section id="fragen">
+				Fragen?
+				TODO: QR Code zu Slides
 			</section>
 		</div>
 	</div>
@@ -172,6 +250,7 @@
 		// - https://revealjs.com/config/
 		Reveal.initialize({
 			hash: true,
+			autoPlayMedia: false,
 
 			// Learn about plugins: https://revealjs.com/plugins/
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
