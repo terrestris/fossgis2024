@@ -24,27 +24,49 @@
 			text-transform: none;
 		}
 
-		iframe {
+		.reveal iframe {
 			margin: 0;
 			padding: 0;
 			border: none;
 		}
 
-		.attribution {
+		.reveal .attribution {
 			font-size: 0.5em;
 			bottom: 0;
 			display: block;
 		}
 
-		blockquote footer {
+		.reveal blockquote {
+			box-shadow: none;
+			background-color: transparent;
+			background-image: url(../img/quote-open.svg);
+			background-repeat: no-repeat;
+			background-size: 1.3em;
+			text-indent: 1em;
+		}
+
+		.reveal blockquote p::before {
+			content: " ";
+			position: absolute;
+			width: 100%;
+			height:100%;   
+			background-image: url(../img/quote-open.svg);
+			background-repeat: no-repeat;
+			background-size: 1.3em;
+			background-position: top bottom;
+			background-position: 0% 10%;
+			transform: rotate(180deg);
+		}
+
+		.reveal blockquote footer {
 			text-align: right;
 		}
 
-		blockquote p {
+		.reveal blockquote p {
 			text-align: left;
 		}
 
-		blockquote p em {
+		.reveal blockquote p em {
 			text-shadow: 0 0 3px darkorange
 		}
 	</style>
@@ -58,16 +80,17 @@
 			<section id="quote-steve-c">
 				<blockquote class="r-stretch">
 					<p>
-						First OpenAI came for the artists and I did not speak out - because I was not an artist.<br>
-						Then OpenAI came for the writers and I did not speak out - because I was not a writer.<br>
-						Then OpenAI came for the visual effects artists and I did not speak out - because I was not a
+						First <em>OpenAI came for the artists</em> and I did not speak out - because I was not an artist.<br>
+						Then OpenAI came for <em>the writers</em> and I did not speak out - because I was not a writer.<br>
+						Then OpenAI came for <em>the visual effects artists</em> and I did not speak out - because I was not a
 						visual effects artist.<br>
-						Then OpenAI came for the programmers - and there was nobody left to speak out for them.
+						Then OpenAI came for <em>the programmers</em> - and there was nobody left to speak out for them.
 					</p>
 					<footer>—Steve Coast</footer>
 				</blockquote>
 				<p class="attribution">Quelle: <a
-						href="https://twitter.com/SteveC/status/1761554509916967285">https://twitter.com/SteveC/status/1761554509916967285</a>
+						href="https://twitter.com/SteveC/status/1761554509916967285">https://twitter.com/SteveC/status/1761554509916967285</a>,
+						eig. Hervorhebung
 				</p>
 			</section>
 
