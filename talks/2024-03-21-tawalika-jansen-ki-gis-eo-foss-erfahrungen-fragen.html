@@ -323,14 +323,19 @@ inkl. nioce graphic
 							<li>Anwenden des Modells auf andere Gebiete mit <code>r.learn.predict</code></li>
 							<li>Beliebt: der <code>RandomForestClassifier</code></li>
 						</ul>
+						<p class="attribution">Bildquellen: <a
+							href="https://grass.osgeo.org/grass83/manuals/addons/r.learn.ml2.html">GRASS GIS - r.learn.ml2 Dokumentation</a>
+						</p>
 					</div>
 					<div style="flex: 2">
-						<!-- TODO: Bildunterschriften https://grass.osgeo.org/grass83/manuals/addons/r.learn.ml2.html -->
 						<img style="margin: 0; padding:0" src="../img/ki-lsat7_2000_b742.jpg" />
-						<!-- Landsat 7 (2000) bands 7,4,2 color composite example: -->
-
+						<p class="attribution" style="margin:-1em;">
+							<a href="https://grass.osgeo.org/grass83/manuals/addons/r.learn.ml2.html">Landsat 7 bands 7,4,2 color composite</a>
+						</p>
 						<img style="margin: 0; padding:0" src="../img/ki-rfclassification.jpg" />
-						<!-- Random forest classification result: -->
+						<p class="attribution" style="margin:-1em;">
+							<a href="https://grass.osgeo.org/grass83/manuals/addons/r.learn.ml2.html">Random forest classification result</a>
+						</p>
 					</div>
 				</div>
 			</section>
@@ -358,12 +363,14 @@ inkl. nioce graphic
 							</li>
 							<li>GPU System von Vorteil</li>
 						</ul>
+						<p class="attribution">Bildquellen: <a
+							href="">El Niño Prognose, internes jupyter notebook</a>
+						</p>
 					</div>
-					<!-- TODO: Bildunterschrift -->
 					<div style="flex: 3; font-size: 0.5em;">
 						<img style="margin: 0; padding:0" src="../img/ki-el-nino.jpg" />
 						<img style="margin: 0; padding:0" src="../img/ki-el-nino2.jpg" />
-						<!-- El Niño Prognose, Quelle jupyter notebook -->
+						<!-- -->
 					</div>
 				</div>
 			</section>
@@ -486,7 +493,7 @@ Bitte gib mir nur den Code und keine Erläuterung.
 							<img src="../img/robot-mix.png" height="260" style="margin:0">
 						</div>
 					</div>
-					
+
 				</div>
 				<p class="attribution">
 					AI Act: <a href="https://en.wikipedia.org/wiki/Artificial_Intelligence_Act">Wikipedia</a>, Freedoms: <a href="https://www.gnu.org/philosophy/free-sw.html">gnu.org</a>, robot mixing liquids: <a href="https://perchance.org/ai-text-to-image-generator">perchance.org</a>
@@ -495,25 +502,63 @@ Bitte gib mir nur den Code und keine Erläuterung.
 
 
 			<section>
-				<h3>Offene Fragen</h3>
-				<div style="display: flex;">
+				<h3>Offene Fragen - Umwelt und Ethik - "nachhaltige KI"</h3>
+				<div style="display: flex;font-size: 0.7em" class="r-stretch">
 					<div style="flex: 1">
-						<ul>
-							<li>Umweltaspekte, "nachhaltige KI"</li>
-							<!--
-								* Umweltaspekte, "nachhaltige KI" Artikel, https://algorithmwatch.org/de/nachhaltigkeit-ki-erklaert/
-					https://www.climatechange.ai/ https://algorithmwatch.org/de/proteste-gegen-rechenzentren/, ecosia ki
-							-->
-							<li>ethische Aspekt</li>
-							<!--
-								https://aiartists.org/unanswered-questions
-							-->
-						</ul>
+						<p>Ist KI ein Mittel gegen die Klimakrise?</p>
+						<p style="font-size:0.7em">Ressourcenverbrauch · Energie- oder Mobilitätswende · Erforschung neuer Materialien</p>
+						<img style="margin:0;padding:0;float:left;width:40%" src="../img/ki-ecosia.jpg" alt="">
+						<div style="width:60%;float:left;">
+							<img style="margin:0;padding:0;" src="../img/ki-un-ai.jpg" alt="">
+							<img style="margin:0;padding:0;" src="../img/ki-climatechange-ai.jpg" alt="">
+						</div>
 					</div>
 					<div style="flex: 1">
-						Bilderchen
+						<p>Oder ist KI selbst klimaschädlich?</p>
+						<p style="font-size:0.7em">Energieverbrauch · CO2-Emissionen · Umweltschäden · Wasserbedarf & -knappheit · Bedarf an Mineralien</p>
+						<!-- Risiken:
+							- Die enorm gestiegene Nachfrage nach KI-Technologien führt auch zu einem immer größeren Wasserbedarf
+							- Menschen, Arbeitsbedingungen
+							- ChatGPT benötigt 500 ml Wasser für einen einfachen Dialog mit 20 bis 50 Fragen und Antworten
+							  bei mehr als 100 Millionen aktive Nutzer*innen
+							Mehr Beispiele:
+							- Schon beim Training des Sprachmodells BLOOM sind etwa 24,7 Tonnen CO2-Äquivalente an Emissionen entstanden
+							- Während eines einzigen Trainingslaufs von PaLM wurden in einem Google-Rechenzentrum in Oklahoma,
+							  das zu 89 Prozent mit kohlenstofffreier Energie betrieben wird, 271,43 Tonnen CO2 emittiert
+							- Beim Training großer Sprachmodelle wie GPT-3 und LaMDA können Millionen Liter Frischwasser für die Kühlung
+							  der Kraftwerke und KI-Server verdampfen
+							- Der direkte Wasserverbrauch von Google ist beispielsweise zwischen 2021 und 2022 um 20 Prozent gestiegen
+							  und hat sich in bestimmten Dürregebieten sogar verdoppelt
+							- In diesem Zeitraum verzeichnete Microsoft einen Anstieg seines direkten Wasserverbrauchs um 34 Prozent
+							- nur auf den Anwendungsmodus: Das Training von GPT-3 in den State-of-the-Art-Rechenzentren von Microsoft
+							  in den USA kann direkt 700.000 Liter sauberes Frischwasser verbrauchen
+							(Aus https://algorithmwatch.org/de/nachhaltigkeit-ki-erklaert/)
+						-->
+						<!-- Im AI Act ist Umweltrelevanz kein/kaum Thema -->
+						<blockquote style="width:100%" class="r-stretch">
+							<p>
+								Probleme kann man niemals mit derselben Denkweise lösen, durch die sie entstanden sind.
+							</p>
+							<footer>—Albert Einstein</footer>
+						</blockquote>
+						<img width="" style="margin:0;padding:0" src="../img/ki-generated-developer.jpg" alt="">
 					</div>
 				</div>
+				<!--
+				Hintergrundinfos
+				- https://algorithmwatch.org/de/nachhaltigkeit-ki-erklaert/
+				- https://algorithmwatch.org/de/bildgeneratoren-stereotypen/
+				- https://aiartists.org/unanswered-questions
+				-->
+				<p class="attribution" style="background: rgba(255,255,255, 1);width:20%;font-size:0.3em;position:absolute;bottom:-1em;">
+					Bildquellen: </br>
+					<a href="https://www.ecosia.org/chat">Ecosia KI</a> ·
+					<a href="https://www.un.org/en/desa/artificial-intelligence-saving-natural-world">www.un.org ARIES for SEEA</a> ·
+					<!-- Artificial Intelligence for Environment & Sustainability (ARIES)
+					System of Environmental-Economic Accounting (SEEA) - Ecosystem Accounting -->
+					<a href="https://www.climatechange.ai/">climatechange.ai</a> ·
+					<a href="https://perchance.org/ai-text-to-image-generator">Generierte "Casual Photos" mit perchance.org</a>
+			    </p>
 			</section>
 
 			<section data-background="../img/zauberfloete-opera-16-l.webp">
@@ -529,7 +574,7 @@ Bitte gib mir nur den Code und keine Erläuterung.
 							<!--
 								Künster ja schon in erster quote angesproche:
 								https://aiartists.org/generative-art-design
-							
+
 								https://aiartists.org/unanswered-questions
 							-->
 
@@ -594,9 +639,10 @@ Bitte gib mir nur den Code und keine Erläuterung.
 				<h2>Spannend aber war nicht unterzubringen</h2>
 				<ul>
 					<li>https://www.swebench.com/#</li>
+					<li><a target="_blank" href="https://huggingface.co/IGNF/FLAIR-INC_rgbie_15cl_resnet34-unet">Vortrainiertes Netz für Aerial Image Classification</a></li>
+					<li><a target="_blank" href="https://www.climatechange.ai/tutorials?type=Climate+Prediction">Klimawandeltutorials mit KI</a></li>
 				</ul>
 			</section>
-
 
 		</div>
 	</div>
@@ -616,7 +662,7 @@ Bitte gib mir nur den Code und keine Erläuterung.
 			plugins: [RevealMarkdown, RevealHighlight, RevealNotes]
 		});
 
-		//  data-theme="black" 
+		//  data-theme="black"
 		// let themeElem = document.getElementById('theme');
 		// let lastTheme;
 		// Reveal.on( 'slidechanged', event => {
