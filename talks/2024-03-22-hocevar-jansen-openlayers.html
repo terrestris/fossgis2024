@@ -125,6 +125,47 @@
 				</ul>
 			</section>
 
+			<section id="browser">
+				<h2>OpenLayers im Browser</h2>
+			</section>
+
+			<section id="hello-world">
+				<h2>Hallo Welt</h2>
+				<pre><code class="language-javascript">import 'ol/ol.css';
+import { Map, View } from 'ol';
+import TileLayer from 'ol/layer/Tile';
+import OSM from 'ol/source/OSM';
+
+const map = new Map({
+	target: map, // oder document.querySelector('#map'),
+	layers: [
+		new TileLayer({ source: new OSM() })
+	],
+	view: new View({
+		center: [0, 0],
+		zoom: 2
+	})
+});</code></pre>
+			</section>
+
+			<section id="hello-hamburg">
+				<h2>Hallo Hamburg</h2>
+				<pre><code class="language-javascript">import "ol/ol.css";
+import { apply } from "ol-mapbox-style";
+import { fromLonLat } from "ol/proj";
+
+const basemap =
+	"https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/" +
+	"styles/bm_web_col.json";
+
+apply("map", basemap).then((map) =>
+	map.getView().animate({
+		center: fromLonLat([10.01, 53.55]),
+		zoom: 9.5,
+	}),
+);</code></pre>
+			</section>
+
 			<section id="thanks-questions">
 				<h2>Danke!</h2>
 				<h2>Fragen oder Anmerkungen?</h2>
