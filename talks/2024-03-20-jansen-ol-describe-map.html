@@ -37,6 +37,29 @@
 			left: 0;
 			display: block;
 		}
+
+		#event,
+		#title-association {
+			position: absolute;
+			width: 200px;
+			bottom: 0;
+			font-size: 0.4em;
+			padding: 0;
+		}
+		#event {
+			right: -5em;
+		}
+		#title-association {
+			left: -5em;
+		}
+		@media print {
+			#event {
+			right: -1em;
+		}
+		#title-association {
+			left: -1em;
+		}
+		}
 	</style>
 </head>
 
@@ -46,7 +69,7 @@
 			<section id="start" data-background="../img/ol-describe-map.svg" data-background-size="contain"></section>
 
 			<section id="title" data-background="../img/ol-describe-map.svg" data-background-size="contain"
-				data-background-opacity="0.3">
+				data-background-opacity="0.2">
 				<h1 lang="en"><code>ol-describe-map</code></h1>
 				<h2>Mehr Web-<span lang="en">Accessibility</span> für <span lang="en">OpenLayers</span> Karten</h2>
 				<p style="margin-top: 2em;">
@@ -55,6 +78,17 @@
 				<p style="font-size: 0.7em;">
 					FOSSGIS 2024 | 20. M&auml;rz 2024 | Hamburg
 				</p>
+
+				<div id="title-association">
+					<a href="https://www.terrestris.de/" style="margin:0">
+						<img alt="Logo von terrestris" src="../img/terrestris.svg" style="margin:1em 0 0 0;" height="80">
+					</a>
+					<img alt="DIN-konformes und zertifiziertes Qualitäts- und Umweltmanagement bei terrestris" title="DIN-konformes und zertifiziertes Qualitäts- und Umweltmanagement bei terrestris" src="../img/terrestris-zert.png" style="margin:1em 0 0 0;" height="40">
+				</div>
+				<div id="event">
+					<img width="200" style="margin:0;" src="../img/LOGO_FOSSGIS24_RGB_300dpi.png">
+				</div>
+
 			</section>
 
 			<section id="toc">
