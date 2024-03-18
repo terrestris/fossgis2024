@@ -32,12 +32,12 @@
 			</section>
 
 			<section id="toc">
-				<h3>Vorschau</h3>
+				<h3>Fahrplan</h3>
 				<ul>
-					<li>Kurze Vorstellung</li>
+					<li>Vorstellung und Einordnung des Vortrags</li>
 					<li>Cloud-Probleme des "klassischen" GeoServer</li>
 					<li>Deswegen: GeoServer Cloud</li>
-					<li>Deployment am Beispiel Kubernetes</li>
+					<li>Deployment am Beispiel Kubernetes (Video-Demo)</li>
 				</ul>
 			</section>
 
@@ -48,7 +48,7 @@
 					<ul style="flex: 3">
 						<li>Informatiker</li>
 						<li>Entwickler bei <a href="https://www.terrestris.de/" target="_blank">terrestris</a></li>
-						<li>Maintainer des "offiziellen" Docker GeoServer Images</li>
+						<li>Maintainer des GeoServer Docker Images</li>
 						<li>Schwerpunkte
 							<ul>
 								<li>GeoServer</li>
@@ -67,6 +67,16 @@
 				</div>
 			</section>
 
+			<section id="einordnung">
+				<h3>Einordnung</h3>
+				<ul>
+					<li>Interesse am Thema</li>
+					<li>Kein Power-User</li>
+					<li>Kein Kernentwickler</li>
+					<li>"Bericht" über meine Erfahrungen</li>
+				</ul>
+			</section>
+
 			<section id="geoserver" data-background="../img/gs.svg" data-background-size="contain"
 				data-background-opacity="0.2">
 				<h3>GeoServer</h3>
@@ -83,6 +93,7 @@
 								<li>… mehr</li>
 							</ul>
 						</li>
+						<li>GeoFencing</li>
 					</ul>
 				</div>
 			</section>
@@ -117,10 +128,10 @@
 					<ul>
 						<li><a href="https://github.com/geoserver/geoserver-cloud" target="_blank">https://github.com/geoserver/geoserver-cloud</a></li>
 						<li>Eigenes Projekt "on top"</li>
-						<li>Cloud native</li>
-						<li>DevOps friendly</li>
-						<li>Wiederverwendung bestehender Implementierungen</li>
-						<li>Entkopplung hin zu individuell skalierbaren Microservices!</li>
+						<li>Cloud native & DevOps friendly</li>
+						<li>Wiederverwendung bestehender GeoServer Logik</li>
+						<li>Entkopplung hin zu individuell skalierbaren Microservices</li>
+						<li>Spring (Boot)!</li>
 					</ul>
 				</div>
 			</section>
@@ -150,7 +161,7 @@
 						<div style="font-size: 0.8em;">Außerdem:</div>
 						<div style="font-size: 0.6em; margin: 1em 0 0 0;">
 							<ul>
-								<li>Front Gateway</li>
+								<li>Front Gateway als "single entry point"</li>
 								<li>Event Bus (RabbitMQ)</li>
 								<li>Catalog/Config (XML oder JDBC)</li>
 							</ul>
@@ -159,32 +170,193 @@
 				</div>
 			</section>
 
-			<section id="pro-contra">
-				<h3>Pro und Contra</h3>
-				<div style="font-size: 0.9em;">
+			<section id="maven-pom">
+				<h3>Maven pom.xml</h3>
+				<pre>
+<code data-line-numbers="25-28|12"><project>
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.geoserver.cloud.apps</groupId>
+		<artifactId>gs-cloud-services</artifactId>
+		<version>${revision}</version>
+	</parent>
+	<artifactId>gs-cloud-wms</artifactId>
+	<packaging>jar</packaging>
+	<name>wms-service</name>
+	<properties>
+		<start-class>org.geoserver.cloud.wms.app.WmsApplication</start-class>
+	</properties>
+	<dependencies>
+		<dependency>
+			<groupId>org.geoserver.cloud</groupId>
+			<artifactId>gs-cloud-starter-webmvc</artifactId>
+			<exclusions>
+				<exclusion>
+				<groupId>org.geoserver</groupId>
+				<artifactId>gs-gwc</artifactId>
+				</exclusion>
+			</exclusions>
+		</dependency>
+		<dependency>
+			<groupId>org.geoserver</groupId>
+			<artifactId>gs-wms</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.geoserver.cloud</groupId>
+			<artifactId>gs-cloud-starter-wms-extensions</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.geoserver.cloud</groupId>
+			<artifactId>gs-cloud-starter-security</artifactId>
+		</dependency>
+		...
+	</dependencies>
+	...
+</project>
+				</code></pre>
+				<div style="font-size: 0.4em;">Quelle: <a href="https://github.com/geoserver/geoserver-cloud/blob/main/src/apps/geoserver/wms/pom.xml" target="_blank">WMS pom.xml auf github</a></div>
+			</section>
+
+			<section id="java-code-spring">
+				<h3>Java Code (Spring Boot)</h3>
+				<pre>
+<code data-line-numbers="7">@SpringBootApplication
+@EnableRetry
+public class WmsApplication {
+
+	public static void main(String[] args) {
+		try {
+			SpringApplication.run(WmsApplication.class, args);
+		} catch (RuntimeException e) {
+			try {
+				LoggerFactory.getLogger(WmsApplication.class).error("Application run failed", e);
+			} finally {
+				System.exit(-1);
+			}
+		}
+	}
+}
+				</code></pre>
+				<div style="font-size: 0.4em;">Quelle: <a href="https://github.com/geoserver/geoserver-cloud/blob/main/src/apps/geoserver/wms/src/main/java/org/geoserver/cloud/wms/app/WmsApplication.java" target="_blank">WmsApplication.java auf github</a></div>
+			</section>
+
+			<section id="java-code-controller">
+				<h3>Java Code (Spring Web Controller)</h3>
+				<pre>
+<code data-line-numbers="17-19|32-36|38-41|21|7">package org.geoserver.cloud.wms.controller;
+
+import lombok.NonNull;
+import lombok.RequiredArgsConstructor;
+
+import org.geoserver.cloud.virtualservice.VirtualServiceVerifier;
+import org.geoserver.ows.Dispatcher;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.servlet.view.RedirectView;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@Controller
+@RequiredArgsConstructor
+public class WMSController {
+
+	private final @NonNull Dispatcher geoserverDispatcher;
+
+	private final @NonNull org.geoserver.ows.ClasspathPublisher classPathPublisher;
+
+	private final @NonNull VirtualServiceVerifier virtualServiceVerifier;
+
+	@GetMapping("/")
+	public RedirectView redirectRootToGetCapabilities() {
+		return new RedirectView("/wms?SERVICE=WMS&REQUEST=GetCapabilities");
+	}
+
+	@GetMapping(path = {"/wms", "/ows"})
+	public void handleGet(HttpServletRequest request, HttpServletResponse response)
+			throws Exception {
+		dispatch(request, response);
+	}
+
+	private void dispatch(HttpServletRequest request, HttpServletResponse response)
+		throws Exception {
+		geoserverDispatcher.handleRequest(request, response);
+	}
+}
+				</code></pre>
+				<div style="font-size: 0.4em;">Quelle: <a href="https://github.com/geoserver/geoserver-cloud/blob/main/src/apps/geoserver/wms/src/main/java/org/geoserver/cloud/wms/controller/WMSController.java" target="_blank">WMSController.java auf github</a></div>
+			</section>
+
+			<section id="wms-dockerfile">
+				<h3>WMS Microservice Dockerfile</h3>
+				<pre>
+<code data-line-numbers="1-8|11-18">ARG TAG=latest
+FROM geoservercloud/gs-cloud-base-jre:$TAG as builder
+
+ARG JAR_FILE=target/gs-cloud-*-bin.jar
+
+COPY ${JAR_FILE} application.jar
+
+RUN java -Djarmode=layertools -jar application.jar extract
+
+##########
+FROM geoservercloud/gs-cloud-base-geoserver-image:$TAG
+
+COPY --from=builder dependencies/ ./
+COPY --from=builder snapshot-dependencies/ ./
+COPY --from=builder spring-boot-loader/ ./
+COPY --from=builder application/ ./
+				</code></pre>
+				<div style="font-size: 0.4em;">Quelle: <a href="https://github.com/geoserver/geoserver-cloud/blob/main/src/apps/geoserver/wms/Dockerfile" target="_blank">WMS Dockerfile auf github</a></div>
+			</section>
+
+			<section id="fazit">
+				<h3>Fazit</h3>
+				<div style="font-size: 0.8em;">
 					<ul>
 						<li>Vorteile</li>
 						<ul>
-							<li>Mehr Sicherheit durch potenziell kleineren Angriffsvektor</li>
 							<li>Native Einbindung in moderne Cloud-Umgebungen</li>
 							<ul>
-								<li>Skalierbarkeit</li>
-								<li>Verfügbarkeit</li>
+								<li>Skalierbarkeit/Dimensionierung</li>
+								<li>Verfügbarkeit ("Service isolation")</li>
 								<li>Gute Monitoring und Telemetrie-Unterstützung</li>
+								<li>Location transparency</li>
 							</ul>
+							<li>Mehr Sicherheit durch potenziell kleineren Angriffsvektor</li>
 						</ul>
 						<li>Nachteile</li>
 						<ul>
 							<li>Kompatibilität von Erweiterungen</li>
 							<li>Komplexeres Setup in Cloud-Umgebung</li>
-							<li>Ggf. erhöhter Wartungsaufwand</li>
+							<li>bislang überschaubare Dokumentation</li>
+						</ul>
+					</ul>
+				</div>
+			</section>
+
+			<section id="ausblick">
+				<h3>Ausblick</h3>
+				<div style="font-size: 0.8em;">
+					<ul>
+						<li>Quelle: Kernentwickler <a href="https://github.com/groldan" target="_blank">Gabriel Roldan</a></li>
+						<li>GS Cloud Release v1.7.0 (GS 2.25.0)</li>
+						<li>Neues config plugin "pgconfig" als hocheffizienter PostgreSQL-Katalog (ersetzt jdbconfig bzw. file-based XML catalog)</li>
+						<li>GeoServer ACL (Access Control List) statt GeoFence</li>
+						<ul>
+							<li>GS Cloud kompatibel</li>
+							<li>skalierbarer Microservice</li>
+							<li>eigene REST-API</li>
+							<li>OpenAPI -> Code-Generierung für Clients</li>
 						</ul>
 					</ul>
 				</div>
 			</section>
 
 			<section id="kind">
-				<h3>Kubernetes in Docker</h3>
+				<h3>Kubernetes in Docker (KIND)</h3>
 					<ul>
 						<li><a href="https://github.com/terrestris/kind-dev-cluster" target="_blank">https://github.com/terrestris/kind-dev-cluster</a></li>
 						<li>Lokaler Kubernetes Cluster</li>
@@ -234,8 +406,8 @@
 			</section>
 
 			<section id="fragen">
-				Fragen?
-				TODO: QR Code zu Slides
+				<h3>Fragen?</h3>
+				<img src="../img/slides-qr.png" style="width: 50%;" />
 			</section>
 		</div>
 	</div>
