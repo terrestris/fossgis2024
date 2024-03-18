@@ -137,7 +137,7 @@ import TileLayer from 'ol/layer/Tile';
 import OSM from 'ol/source/OSM';
 
 const map = new Map({
-	target: map, // oder document.querySelector('#map'),
+	target: "map", // oder document.querySelector("#map"),
 	layers: [
 		new TileLayer({ source: new OSM() })
 	],
