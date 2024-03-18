@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+  Licensed to the Apache Software Foundation (ASF) under one
+  or more contributor license agreements.  See the NOTICE file
+  distributed with this work for additional information
+  regarding copyright ownership.  The ASF licenses this file
+  to you under the Apache License, Version 2.0 (the
+  "License"); you may not use this file except in compliance
+  with the License.  You may obtain a copy of the License at
+    http://www.apache.org/licenses/LICENSE-2.0
+  Unless required by applicable law or agreed to in writing,
+  software distributed under the License is distributed on an
+  "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+  KIND, either express or implied.  See the License for the
+  specific language governing permissions and limitations
+  under the License.
+-->
+
+<svg
+   width="95.459999"
+   height="57.459999"
+   viewBox="0 0 95.459999 57.459999"
+   version="1.1"
+   xml:space="preserve"
+   style="clip-rule:evenodd;fill-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:2"
+   id="svg1324"
+   sodipodi:docname="superset-logo.svg"
+   inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs1328" /><sodipodi:namedview
+   id="namedview1326"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:pageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   showgrid="false"
+   inkscape:zoom="3.9548872"
+   inkscape:cx="77.119772"
+   inkscape:cy="29.330798"
+   inkscape:window-width="1920"
+   inkscape:window-height="1132"
+   inkscape:window-x="1920"
+   inkscape:window-y="0"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="svg1324"
+   fit-margin-top="10"
+   fit-margin-left="10"
+   fit-margin-right="10"
+   fit-margin-bottom="10" />
+    <path
+   d="M 66.07,10 C 59.6,10 53.64,13.64 47.88,20 42.22,13.54 36.16,10 29.39,10 18.18,10 10,18 10,28.77 c 0,10.77 8.18,18.67 19.39,18.67 6.89,0 12.23,-3.23 18.19,-9.67 5.76,6.46 11.62,9.69 18.49,9.69 C 77.28,47.44 85.46,39.57 85.46,28.77 85.46,17.97 77.28,10 66.07,10 Z m -36.6,26.14 c -4.75,0 -7.58,-3.13 -7.58,-7.27 0,-4.14 2.83,-7.36 7.58,-7.36 4,0 7.27,3.22 10.81,7.56 -3.34,4.04 -6.87,7.07 -10.81,7.07 z m 36.26,0 c -3.94,0 -7.27,-3.13 -10.81,-7.27 3.64,-4.34 6.77,-7.36 10.81,-7.36 4.75,0 7.55,3.26 7.55,7.36 0,4.1 -2.8,7.27 -7.55,7.27 z"
+   style="fill:#484848;fill-rule:nonzero"
+   id="path1294" />
+    <path
+   d="m 56.02,44.77 7.54,-9 c -3,-0.9 -5.77,-3.6 -8.64,-6.95 l -7.34,8.95 c 2.403,2.788 5.256,5.154 8.44,7 z"
+   style="fill:#20a7c9;fill-rule:nonzero"
+   id="path1296" />
+    
+    <path
+   d="m 47.88,19.99 c -2.387,-2.828 -5.222,-5.247 -8.39,-7.16 l -7.55,9.1 c 2.87,1 5.41,3.58 8.11,6.87 l 0.3,0.21 z"
+   style="fill:#20a7c9;fill-rule:nonzero"
+   id="path1322" />
+</svg>

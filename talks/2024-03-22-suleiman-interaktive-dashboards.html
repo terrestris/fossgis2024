@@ -53,6 +53,10 @@
         margin: 0 !important;
       }
 
+      blockquote {
+        box-shadow: unset !important;
+      }
+
       .blurry-banner {
         width: 100%;
         backdrop-filter: blur(8px) grayscale(100%);
@@ -164,9 +168,17 @@
           <h2 class="slide-header">Inhalt</h2>
           <div class="slide-content-default gap" style="justify-content: center;">
             <ol>
-              <li>TODO</li>
-              <li>TODO</li>
-              <li>TODO</li>
+              <li>Dashboards in Intelligence Prozessen</li>
+              <li>Apache Superset</li>
+              <li>
+                Dashboards für
+                <ol>
+                  <li>Privatwirtschaft</li>
+                  <li>öffentliche Hand</li>
+                  <li>partizipatorische Ansätze</li>
+                </ol>
+              </li>
+              <li>Fazit</li>
             </ol>
             <small>Link zu den Folien: <a href="https://terrestris.github.io/fossgis2024">https://terrestris.github.io/fossgis2024</a></small>
           </div>
@@ -178,10 +190,261 @@
         </section>
 
         <section>
-          <h2 class="slide-header">Beispiel 1 TODO</h2>
+          <h2 class="slide-header">Dashboards in Intelligence Prozessen</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+            <!-- TODO maybe add an image -->
+            <blockquote cite="https://de.wikipedia.org/wiki/Business_Intelligence">
+              [...] Business Intelligence (Abkürzung BI), ist ein der Wirtschaftsinformatik zuzuordnender Begriff, der Verfahren und Prozesse zur systematischen Analyse des eigenen Unternehmens bezeichnet. Dies umfasst die Sammlung, Auswertung und Darstellung von Daten in elektronischer Form.
+            </blockquote>
+            <blockquote cite="https://de.wikipedia.org/wiki/Business_Intelligence">
+              Ziel ist die Gewinnung von Erkenntnissen aus den im Unternehmen vorhandenen Daten zur Unterstützung von Managemententscheidungen.
+            </blockquote>
+            <cite style="display: inline-flex; justify-content: end; font-size: smaller">Quelle: Wikipedia</cite>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <!-- <section>
+          <h2 class="slide-header">Dashboards in Intelligence Prozessen</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+            <div class="slide-content-horizontal gap">
+              <div>
+                <h3>Technische Phasen der BI</h3>
+                <ol>
+                  <li>Datenerfassung/-lieferung</li>
+                  <li>Datenanalyse/-discovery</li>
+                  <li>Wissensvermittlung/-verteilung</li>
+                </ol>
+              </div>
+              <div>
+                <h3>Konzeptionelle Phasen der BI</h3>
+                <ol>
+                  <li>Fragestellung/Hypothese</li>
+                  <li>Identifikation notwendiger (Roh-)daten</li>
+                  <li>Darstellung und Analyse</li>
+                  <li>Wissensvermittlung</li>
+                </ol>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section> -->
+
+        <section>
+          <h2 class="slide-header">Dashboards in Intelligence Prozessen</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+                <!-- TODO aufzeigen wo hier Dashboards ins Spiel kommen und stark betonen -->
+            <img src="../img/superset-bi-phases.svg" height="500px"/>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Dashboards in Intelligence Prozessen</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+                <!-- TODO aufzeigen wo hier Dashboards ins Spiel kommen und stark betonen -->
+            <img src="../img/superset-bi-phases-highlighted2.svg" height="500px"/>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Apache Superset</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+            <div class="slide-content-horizontal">
+              <div style="flex: 3;">
+                <img src="../img/superset-logo.svg" height="150px" />
+                <blockquote cite="https://superset.apache.org/">
+                  Apache Superset™ is an open-source modern data exploration and visualization platform.
+                </blockquote>
+              </div>
+              <div style="flex: 5; display: flex; flex-direction: column;">
+                <img src="../img/superset-dashboard-example.jpg" />
+                <span style="font-size: small">Copyright © 2024, The Apache Software Foundation (https://superset.apache.org/img/hero-screenshot.jpg)</span>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Apache Superset</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+            <div class="slide-content-horizontal">
+              <div style="flex: 3;">
+                <img src="../img/superset-logo.svg" height="150px" />
+                TODO add diagram to highlight that superset connects to external databases. put this in relation to the BI phases
+                
+                TODO emphasize the benefits of interactivity: auto-update, better exploration (detail on demand), cross-filter
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Dashboards</h2>
+          <h3>für die Privatwirtschaft</h3>
+          <div class="slide-content-default" style="justify-content: center;">
+            <div class="slide-content-horizontal gap">
+              <div style="flex: 1">
+                <img src="../img/superset_noun-renewable-energy-81668.svg" height="300px" />
+              </div>
+              <div style="flex: 2; text-align: left">
+                <h4>Szenario</h4>
+                <p>
+                  Ein Unternehmen aus dem Energiesektor beschäftigt sich mit dem Ausbau von Kraftwerken für erneuerbare Energien.
+                </p>
+                <p>
+                  Dem Unternehmen stehen verschiedenste Datensätze zur Verfügung.
+                </p>
+                <p>
+                  Als Bestandteil ihres Managementprozesses möchte das Unternehmen eine Prozessanalyse durchführen
+                  um darauf basierend vergangene Entscheidungen zu evaluieren um sich für die Zukunft aufzustellen.
+                </p>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Dashboards</h2>
+          <h3>für die Privatwirtschaft</h3>
           <div class="slide-content-default" style="justify-content: center; align-items: stretch; margin-right: -70px">
-            <!-- TODO update src -->
-            <iframe style="height: 100%" src="https://www.terrestris.de/de/ueber-uns/mitarbeiter/"></iframe>
+            TODO add Screenshots here
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Dashboards</h2>
+          <h3>für die öffentliche Hand</h3>
+          <div class="slide-content-default" style="justify-content: center;">
+            <div class="slide-content-horizontal gap">
+              <div style="flex: 1">
+                <img src="../img/superset_noun-urban-planning-6190907.svg" height="300px" />
+              </div>
+              <div style="flex: 2; text-align: left">
+                <h4>Szenario</h4>
+                <p>
+                  Eine Behörde befasst sich mit der Umsetzung des Radverkehrsziels.
+                </p>
+                <p>
+                  Daten zur Entwicklung der innerstädtischen Verkehrsinfrastruktur stehen der Behörde zur Verfügung.
+                </p>
+                <p>
+                  Als Bestandteil der Umsetzung des Radverkehrsziels möchte die Behörde die Entwicklung des Radverkehrsziels
+                  datengestützt analysieren, und hierbei besonderen Fokus auf die laufende Weiterentwicklung und den Effekt
+                  der bisherigen Umsetzungen legen.
+                </p>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Dashboards</h2>
+          <h3>für die öffentliche Hand</h3>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch; margin-right: -70px">
+            TODO add Screenshots here
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Dashboards</h2>
+          <h3>für partizipatorische Ansätze</h3>
+          <div class="slide-content-default" style="justify-content: center;">
+            <div class="slide-content-horizontal gap">
+              <div style="flex: 1">
+                TODO update image
+                <img src="../img/superset_noun-urban-planning-6190907.svg" height="300px" />
+              </div>
+              <div style="flex: 2; text-align: left">
+                <h4>Szenario</h4>
+                <p>
+                  Die Stadt Entenhausen möchte das Ehrenamt in ihrer Stadt stärken und versucht mehr Bürger:innen
+                  zu motivieren sich aktiv einzubringen.
+                </p>
+                <p>
+                  Generelle Daten zum Ehrenamt in Entenhausen stehen der Stadt zur Verfügung. Zusätzlich hat die Stadt ein Portal
+                  eingerichtet, auf dem aktuelle Events eingetragen werden können.
+                </p>
+                <p>
+                  Als Teil ihrer Informationskampagne möchte die Stadt ihre Bürger:innen durch aufzeigen bisheriger Engagements motivieren
+                  und direkt über anstehende Projekte informieren.
+                </p>
+              </div>
+            </div>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Dashboards</h2>
+          <h3>für partizipatorische Ansätze</h3>
+          <div class="slide-content-default" style="justify-content: center;">
+            <img src="../img/superset-participation.png" height="700px"/>
+          </div>
+          <footer>
+            <img src="../img/terrestris.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Fazit</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch; margin-right: -70px">
+            TODO add text here
+
+            - collect keypoints of the different dashboards
           </div>
           <footer>
             <img src="../img/terrestris.svg" height="30px"/>
