@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+    #wrap {
+        height: 100vH;
+        display: flex;
+    }
+    #left{
+        display: flex;
+        flex: 1;
+        flex-direction: column;
+    }
+    #center {
+        flex: 5;
+        display: flex;
+        flex-direction: column;
+    }
+    .item {
+        flex: 1;
+        font-size: 2.3em;
+        color: color #333;
+        background-color: rgba(30, 30, 30, 0.2);
+        border: 1px solid rgba(30, 30, 30, 0.8);
+        margin: 1em 0.2em;
+        text-align: center;
+        font-family: sans-serif;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 1em;
+        box-shadow: 5px 5px rgba(30, 30, 30, 0.4);
+    }
+    #code {
+        flex: 1;
+        font-size: 2.3em;
+        background-color: white;
+        padding: 0 1em;
+        margin: 0;
+    }
+    #map {
+        flex: 5
+    }
+  </style>
+  <script type="module" crossorigin src="../assets/ol-builder.html-90iKM0Ks.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/index-yUtzvxZh.js">
+  <link rel="stylesheet" crossorigin href="../assets/index-ksv720kO.css">
+  <link rel="stylesheet" crossorigin href="../assets/ol-builder-hpNP9OIE.css">
+</head>
+
+<body>
+  <div id="wrap">
+    <div id="left">
+      <div class="item" draggable="true" id="osm">Add OpenStreetMap layer</div>
+      <div class="item" draggable="true" id="recenterAndZoom">Recenter</div>
+      <div class="item" draggable="true" id="basemap">basemap.de Vector tiles</div>
+      <div class="item" draggable="true" id="fossgis-geb">basemap.de Vector tiles</div>
+
+    </div>
+    <div id="center">
+        <div id="code">
+            <pre id="innercode"></pre>
+        </div>
+        <div id="map"></div>
+    </div>
+  </div>
+</body>
