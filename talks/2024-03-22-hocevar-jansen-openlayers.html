@@ -171,6 +171,88 @@ apply("map", basemap).then((map) =>
 				<iframe src="../examples/ol-hellohamburg.html" class="stretch"></iframe>
 			</section>
 
+			<section id="browser-app">
+				<h2>Eine ganze App im Browser</h2>
+				<ul>
+					<li>Vektorkarte von Esri</li>
+					<li>Geolocation (z.B. GPS)</li>
+					<li>Fotos verorten</li>
+					<li>Benutzereingaben laden/speichern</li>
+				</ul>
+			</section>
+
+			<section id="browser-app-example">
+				<iframe src="../examples/ol-helloworld.html" class="stretch"></iframe>
+			</section>
+
+			<section id="vector-esri">
+				<h2>Vektorkarte von Esri</h2>
+				<pre><code class="language-javascript">const basemap = new Group();
+apply(
+	basemap,
+	"https://www.arcgis.com/sharing/rest/content/items/659e7c1b1e374f6c8a89eefe17b23380/resources/styles/root.json",
+	{
+		transformRequest: (url) =>
+			url.replace(/\/VectorTileServer$/, "/VectorTileServer/"),
+	},
+);
+map.addLayer(basemap);
+</code></pre>
+			</section>
+
+			<section id="transformrequest">
+				<h2>transformRequest</h2>
+				<ul>
+					<li>URLs anpassen (für Authentifizierung oder spezielle Anforderungen)</li>
+					<li>Esri verwendet HTTP & ReST falsch</li>
+				</ul>
+				<img src="../img/tilejson-esri.png" />
+			</section>
+
+			<section id="geolocation">
+				<h2>Geolocation (z.B. GPS)</h2>
+				<pre><code class="language-javascript">const updatePosition = ({ coords: { latitude, longitude } }) => {
+	const position = [longitude, latitude];
+	positionFeature.setGeometry(new Point(position));
+};
+
+navigator.geolocation.watchPosition(updatePosition);</code></pre>
+			</section>
+
+			<section id="fotos-verorten">
+				<h2>Fotos verorten</h2>
+				<pre><code class="language-javascript">draw.on('drawend', ({feature}) => {
+	drawnFeature = feature;
+	map.removeInteraction(draw);
+	uppy.getPlugin('Dashboard').openModal();
+});
+	
+uppy.on('complete', ({successful: [file]}) => {
+	drawnFeature.set('picture', file.uploadURL);
+	uppy.cancelAll();
+	uppy.getPlugin('Dashboard').closeModal();
+});</code></pre>
+			</section>
+
+			<section id="benutzereingaben-laden-speichern">
+				<h2>Benutzereingaben laden/speichern</h2>
+				<pre><code class="language-javascript">const markers = new VectorSource();
+const format = new GeoJSON();
+// laden
+if (localStorage.getItem('markers')) {
+	const geojson = localStorage.getItem('markers');
+	const features = format.readFeatures(geojson);
+	markers.addFeatures(features);
+}
+// speichern
+markers.on('change', () => {
+  const features = markers.getFeatures();
+	const geojson = format.writeFeatures(features);
+  localStorage.setItem('markers', geojson);
+});
+</code></pre>
+			</section>
+
 			<section id="thanks-questions">
 				<h2>Danke!</h2>
 				<h2>Fragen oder Anmerkungen?</h2>

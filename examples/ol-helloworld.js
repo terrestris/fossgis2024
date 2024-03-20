@@ -63,7 +63,10 @@ const basemap = new Group();
 apply(
   basemap,
   "https://www.arcgis.com/sharing/rest/content/items/659e7c1b1e374f6c8a89eefe17b23380/resources/styles/root.json",
-  {transformRequest: url => url.replace(/\/VectorTileServer$/, "/VectorTileServer/")}
+  {
+    transformRequest: (url) =>
+      url.replace(/\/VectorTileServer$/, "/VectorTileServer/"),
+  },
 );
 
 const markers = new VectorSource();
@@ -128,18 +131,16 @@ uppy.on('dashboard:modal-closed', () => {
   if (!drawnFeature) { return };
   markers.removeFeature(drawnFeature);
 });
-uppy.on('complete', function oncomplete({successful: [file]}) {
+uppy.on('complete', ({successful: [file]}) => {
   drawnFeature.set('picture', file.uploadURL);
   drawnFeature = undefined;
   uppy.cancelAll();
-  uppy.getPlugin("Dashboard").closeModal();
+  uppy.getPlugin('Dashboard').closeModal();
 });
 draw.on(['drawend', 'drawabort'], ({feature}) => {
   drawnFeature = feature;
-  setTimeout(() => {
-    map.removeInteraction(draw);
-    uppy.getPlugin("Dashboard").openModal();
-  }, 0);
+  map.removeInteraction(draw);
+  uppy.getPlugin('Dashboard').openModal();
 });
 document.querySelector('#picture button').addEventListener('click', () => {
   map.addInteraction(draw);
