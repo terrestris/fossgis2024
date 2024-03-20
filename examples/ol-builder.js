@@ -6,16 +6,17 @@ import TileLayer from 'ol/layer/Tile.js';
 import View from 'ol/View.js';
 import { useGeographic } from 'ol/proj.js';
 import { register } from 'ol/proj/proj4.js';
+import {Draw, Modify, Snap} from 'ol/interaction.js';
+
 
 import hljs from 'highlight.js';
 import 'highlight.js/styles/github.css';
 
-import { apply as applyMapboxStyle } from "ol-mapbox-style";
+import { apply } from "ol-mapbox-style";
 import VectorSource from 'ol/source/Vector';
 import VectorLayer from 'ol/layer/Vector';
 
 import proj4 from 'proj4';
-import { Fill, Stroke, Style } from 'ol/style';
 proj4.defs("EPSG:25832","+proj=utm +zone=32 +ellps=GRS80 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs +type=crs");
 register(proj4);
 
@@ -67,20 +68,33 @@ map.addLayer(layer);`
     case 'recenterAndZoom':
       let view = map.getView();
       view.animate({
-        zoom: 17,
-        center: [9.969576624771204, 53.461975762614486]
+        zoom: 16,
+        center: [9.9696, 53.4620]
       }); 
       updateCodePart(`let view = map.getView();
 view.animate({
-  zoom: 9,
-  center: [9.993682, 53.551086]
+  zoom: 16,
+  center: [9.9696, 53.4620]
 });`
       );
-        break;
+      break;
     case 'basemap':
-      applyMapboxStyle(
-        map,
-        "https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_top.json"
+      let reorder = () => {
+        if (window.geb) {
+          map.removeLayer(window.geb);
+          map.addLayer(window.geb);
+        }
+      };
+      // https://basemap.de/data/produkte/web_vektor/styles/bm_web_bin.json
+      let url = "https://sgx.geodatenzentrum.de/gdz_basemapde_vektor" +
+        "/styles/bm_web_col.json"
+      apply(map, url).then(reorder).catch(reorder);
+      
+      updateCodePart(`import { apply } from "ol-mapbox-style";
+apply(
+  map,
+  "https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_top.json"
+);`
       );
       break;
     case 'fossgis-geb':
@@ -88,19 +102,50 @@ view.animate({
         url: 'https://gisdemo.dp.dsecurecloud.de/FOSSGIS_2024/resources/fossgis_gebaeudeumrisse_25832.geojson',
         format: new GeoJSON()
       });
-      let umring = new VectorLayer({
+      let geb = new VectorLayer({
         source: source,
-        style: new Style({
-          fill: new Fill({
-            color: '#ee8000'
-          }),
-          stroke: new Stroke({
-            color: 'black',
-            width: 1.3
-          })
-        })
+        style: {
+          'stroke-color': 'black',
+          'stroke-width': 1.5,
+          'fill-color': '#ee8000'
+        }
       });
-      map.addLayer(umring);
+      map.addLayer(geb);
+      window.source = source;
+      window.geb = geb;
+      updateCodePart(`let source = new VectorSource({
+  url: 'https://example.com/fossgis_gebaeudeumrisse_25832.geojson',
+  format: new GeoJSON()
+});
+let umring = new VectorLayer({
+  source: source,
+  style: {
+    'stroke-color': 'black',
+    'stroke-width': 1.5,
+    'fill-color': '#ee8000'
+  }
+});`);
+      break;
+    case 'draw':
+      const vecSource = window.source;
+      if(!vecSource) {
+        return;
+      }
+      const modify = new Modify({ source: vecSource });
+      map.addInteraction(modify);
+      const draw = new Draw({
+        source: vecSource,
+        type: 'Polygon'
+      });
+      map.addInteraction(draw);
+      const snap = new Snap({source: vecSource});
+      map.addInteraction(snap);
+      updateCodePart(`let modify = new Modify({source: source});
+let draw = new Draw({
+  source: source,
+  type: 'Polygon'
+});
+let snap = new Snap({source: vecSource});`)
       break;
     default:
       console.log('Undefined map action');
