@@ -48,31 +48,35 @@
 					<ul style="flex: 3">
 						<li>Informatiker</li>
 						<li>Entwickler bei <a href="https://www.terrestris.de/" target="_blank">terrestris</a></li>
-						<li>Maintainer des GeoServer Docker Images</li>
-						<li>Schwerpunkte
+						<li>Maintainer des <a href="https://github.com/geoserver/docker" target="_blank">GeoServer Docker Images</a></li>
+						<li>Interessen und Schwerpunkte
 							<ul>
+								<li>Java, Python, JavaScript</li>
 								<li>GeoServer</li>
-								<li>Java</li>
+								<li>PostgreSQL/PostGIS</li>
 								<li>Docker</li>
+								<li>CICD/Infrastruktur</li>
 							</ul>
 						</li>
 					</ul>
 					<div style="flex: 2; font-size: 0.5em;">
 						<img src="../img/nb.png" />
-						<a href="mailto:buehner@terrestris.de">buehner@terrestris.de</a> <img
+						<a href="mailto:buehner@terrestris.de">buehner@terrestris.de</a><img
 							style="height: 0.9em;margin:0" src="../img/mail-logo.png" alt="E-Mail"><br />
-						<a href="https://github.com/buehner/" target="_blank">github.com/buehner</a> <img style="height: 0.9em;margin:0"
+						<a href="https://github.com/buehner/" target="_blank">github.com/buehner</a><img style="height: 0.9em;margin:0"
 							src="../img/github-logo.png" alt="GitHub"><br />
+						<img style="width: 12em;" src="../img/terrestris.svg" alt="terrestris Logo"><br />
 					</div>
 				</div>
 			</section>
 
 			<section id="einordnung">
-				<h3>Einordnung</h3>
+				<h3>Einordnung und Motivation</h3>
 				<ul>
 					<li>Interesse am Thema</li>
-					<li>Kein Power-User</li>
-					<li>Kein Kernentwickler</li>
+					<li>(Noch) kein Power-User</li>
+					<li>(Noch) kein Kernentwickler</li>
+					<li><a href="https://www.terrestris.de/de/2023/09/29/teambuilding-und-zusammenhalt-technologien-und-strukturen-rueckblick-auf-die-klausurtagung-2023-in-den-niederlanden/" target="_blank">Klausurtagung 2023</a> mit terrestris</li>
 					<li>"Bericht" über meine Erfahrungen</li>
 				</ul>
 			</section>
@@ -127,6 +131,10 @@
 				<div>
 					<ul>
 						<li><a href="https://github.com/geoserver/geoserver-cloud" target="_blank">https://github.com/geoserver/geoserver-cloud</a></li>
+						<ul style="font-size: 0.7em;">
+							<li><a href="https://github.com/geoserver/geoserver-cloud-config" target="_blank">https://github.com/geoserver/geoserver-cloud-config</a></li>
+							<li><a href="https://github.com/geoserver/geoserver-acl" target="_blank">https://github.com/geoserver/geoserver-acl</a></li>
+						</ul>
 						<li>Eigenes Projekt "on top"</li>
 						<li>Cloud native & DevOps friendly</li>
 						<li>Wiederverwendung bestehender GeoServer Logik</li>
@@ -161,9 +169,9 @@
 						<div style="font-size: 0.8em;">Außerdem:</div>
 						<div style="font-size: 0.6em; margin: 1em 0 0 0;">
 							<ul>
-								<li>Front Gateway als "single entry point"</li>
-								<li>Event Bus (RabbitMQ)</li>
-								<li>Catalog/Config (XML oder JDBC)</li>
+								<li>Front Gateway als "single entry point" und Load Balancer</li>
+								<li>Event Bus (RabbitMQ bzw. Spring Cloud Bus)</li>
+								<li>Catalog (XML oder JDBC)</li>
 							</ul>
 						</div>
 					</div>
@@ -358,6 +366,7 @@ COPY --from=builder application/ ./
 			<section id="kind">
 				<h3>Kubernetes in Docker (KIND)</h3>
 					<ul>
+						<li>Kubernetes: Open-Source-System zur Verwaltung einer Container-Infrastruktur</li>
 						<li><a href="https://github.com/terrestris/kind-dev-cluster" target="_blank">https://github.com/terrestris/kind-dev-cluster</a></li>
 						<li>Lokaler Kubernetes Cluster</li>
 						<li>"Spielwiese"</li>
