@@ -1,0 +1,343 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="shortcut icon" href="../img/terrestris_logo_invers.svg">
+
+		<title>WebGIS: Empowering Scrollytelling with Maps and Data </title>
+
+		<link rel="stylesheet" href="../reveal.js/dist/reset.css">
+		<link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+		<link rel="stylesheet" href="../reveal.js/dist/theme/moon.css">
+
+		<!-- Theme used for syntax highlighted code -->
+		<link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css">
+    <style>
+      section {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        top: unset !important;
+        height: 100%;
+      }
+      .slide-header {
+
+      }
+
+      .slide-content-default {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      .slide-content-horizontal {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        align-items: center;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: small;
+      }
+
+      footer img {
+        margin: 0 !important;
+      }
+
+      blockquote {
+        box-shadow: unset !important;
+      }
+
+      .blurry-banner {
+        width: 100%;
+        backdrop-filter: blur(8px) grayscale(100%);
+        background-color: rgba(255, 255, 255, 0.5);
+        padding: 40px;
+      }
+
+      .gap {
+        gap: 100px;
+      }
+
+      .r-stack img {
+        max-height: 850px;
+      }
+
+      .img-shadow {
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+      }
+
+      .code-small>code {
+        overflow: hidden !important;
+      }
+
+      .reveal section a.email {
+        background-image: url("../img/mail-logo.png");
+        background-position: left 0.55em;
+      }
+
+      .reveal section a.github {
+        background-image: url("../img/github-logo.png");
+      }
+
+      .reveal section a.url {
+        background-image: url("../img/url-logo.png");
+      }
+
+      .question-box {
+        background-color: #66c2a5;
+      }
+
+      .about {
+        display: flex;
+        flex-direction: column;
+      }
+      .about-row {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 4rem;
+      }
+
+    </style>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+
+        <section id="title">
+          <div class="slide-content-default" style="justify-content: center; padding: 0;">
+            <h2>Beyond WebGIS: Empowering Scrollytelling <br/>with Maps and Data </h2>
+            <p>
+              <small>Hannes Blitza, terrestris GmbH &amp; Co. KG</small> <br />
+              <small>FOSSGIS 2024, Hamburg</small>
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <div class="slide-content-default" style="justify-content: center;">
+            <h2>Hannes Blitza</h2>
+            <div class="slide-content-horizontal gap" style="flex: unset; justify-content: center; align-items: start;">
+              <div>
+                <img src="../img/hbl.jpg" class="plain" width="200"/><br />
+                <small>
+                  <a class="email" href="mailto:blitza@terrestris.de">blitza@terrestris.de</a><br />
+                  <a class="github" href="https://github.com/hblitza/">@hblitza</a><br />
+                </small><br />
+              </div>
+              <ul>
+                <li>M.Sc. Geographie</li>
+                <li>Front-end Developer, Sales Manager<br />@terrestris, Bonn, Germany</li>
+                <li>OSS Training and Support</li>
+              </ul>
+            </div>
+          </div>
+          <footer>
+            <img src="../img/terrestris_logo_invers.svg" height="30px"/>
+            <span>Beyond WebGIS: Empowering Scrollytelling with Maps and Data , FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Was ist Scrollytelling?</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+            <div class="about">
+              <div class="about-row">
+                <div>
+                  <img src="../img/noun-story-telling-5143020.svg" height="150px" />
+                </div>
+                <div>
+                  Interaktive Geschichtenerzählung
+                </div>
+              </div>
+              <div class="about-row">
+                <div>
+                  <img src="../img/noun-multimedia-6680726.svg" height="150px" />
+                  <img src="../img/noun-chart-104000.svg" height="150px" />
+                  <img src="../img/noun-map-6687202.svg" height="150px" />
+                </div>
+                <div>
+                  Multimedial (Charts, Animationen, Videos)
+                </div>
+              </div>
+              <div class="about-row">
+                <div>
+                  <img src="../img/noun-journalism-1531516.svg" height="150px" />
+                </div>
+                <div>
+                  Viele journalistische Anwendungsbeispiele<br/>(Zeit, FAZ, NY Times, Tagesspiegel)
+                </div>
+              </div>
+            </div>
+          <footer>
+            <img src="../img/terrestris_logo_invers.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Scrollymap</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-idea-1175577.svg" height="150px" />
+              </div>
+              <div>
+                Idee: Karte im Vordergrund, Interaktionen auf der Karte durchs Scrolling
+              </div>
+            </div>
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-event-2253032.svg" height="150px" />
+              </div>
+              <div>
+                Anlass: Kundenanfragen, Klausurtagung @terrestris in NL
+              </div>
+            </div>
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-code-6689088.svg" height="150px" />
+              </div>
+              <div>
+                Technik: Svelte.js + Openlayers</div>
+            </div>
+          </div>
+          <footer>
+            <img src="../img/terrestris_logo_invers.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+
+        <section>
+          <h2 class="slide-header">Scrollymap</h2>
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-checkbox-1016507.svg" height="50px" />
+              </div>
+              <div>
+                Konfigurationskontext YAML
+              </div>
+            </div>
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-checkbox-1016507.svg" height="50px" />
+              </div>
+              <div>
+                View Animation + Rotation
+              </div>
+            </div>
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-checkbox-1016507.svg" height="50px" />
+              </div>
+              <div>
+                Backgroundlayers + Themenlayer
+              </div>
+            </div>
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-checkbox-1016507.svg" height="50px" />
+              </div>
+              <div>
+                Markdown Content (inkl. Grafiken, Video)
+              </div>
+            </div>
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-checkbox-1016507.svg" height="50px" />
+              </div>
+              <div>
+                Charting (Apache Echarts)
+              </div>
+            </div>
+            <div class="about-row">
+              <div>
+                <img src="../img/noun-checkbox-1016507_uncheck.svg" height="50px" />
+              </div>
+              <div>
+                3D Content, Erweiterte Karteninteraktionen, Vektor Tiles
+              </div>
+            </div>         
+          </div>
+          <footer>
+            <img src="../img/terrestris_logo_invers.svg" height="30px"/>
+            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
+            <div></div>
+          </footer>
+        </section>
+      
+        <section>
+          <h2>Imprint</h2>
+          <div class="slide-content">
+            <h4>Autoren</h4>
+            <div class="slide-content-horizontal" style="flex: unset">
+              <address>
+                <strong>Hannes Blitza</strong><br />
+                <span style="font-size: smaller;">
+                  terrestris GmbH &amp; Co. KG<br />
+                  K&ouml;lnstr. 99, 53111 Bonn<br />
+                  blitza@terrestris.de
+                </span>
+              </address>
+            </div>
+          </div>
+          <div class="slide-content" style="flex: unset">
+            <h4 style="clear:both;">Code</h4>
+            <p id="license">
+              <small>
+                <a href="https://github.com/terrestris/scrollymap">github.com/terrestris/scrollymap</a>
+              </small>
+            </p>
+          </div>
+          <div class="slide-content" style="flex: unset">
+            <h4 style="clear:both;">Lizenz</h4>
+            <p id="license">
+              <small>
+                Die Folien sind unter der <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
+                Lizenz veröffentlicht.<br />
+                <a href="https://terrestris.github.io/fossgis2024/">terrestris.github.io/fossgis2024</a><br />
+                <a href="https://github.com/terrestris/fossgis2024">git repository</a><br/>
+                <span><strong>Icons:</strong> The Noun Project Alequinho, Guilherme Simoes, Nurul Hotimah, M. Oki Orlando, CC BY 3.0 License.</span>
+              </small>
+            </p>
+          </div>
+        </section>
+			</div>
+		</div>
+
+		<script src="../reveal.js/dist/reveal.js"></script>
+		<script src="../reveal.js/plugin/notes/notes.js"></script>
+		<script src="../reveal.js/plugin/markdown/markdown.js"></script>
+		<script src="../reveal.js/plugin/highlight/highlight.js"></script>
+		<script>
+			// More info about initialization & config:
+			// - https://revealjs.com/initialization/
+			// - https://revealjs.com/config/
+			Reveal.initialize({
+        width: '100%',
+        height: '100%',
+				hash: true,
+        controlsTutorial: false,
+        transition: 'fade',
+
+				// Learn about plugins: https://revealjs.com/plugins/
+				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+			});
+		</script>
+	</body>
+</html>
