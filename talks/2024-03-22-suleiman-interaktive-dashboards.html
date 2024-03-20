@@ -154,6 +154,7 @@
               <ul>
                 <li>M.Sc. Geographie</li>
                 <li>Front-end Developer, Sales Manager<br />@terrestris, Bonn, Germany</li>
+                <li>OSS Training and Support</li>
               </ul>
             </div>
           </div>
@@ -181,7 +182,7 @@
               <li>Fazit</li>
             </ol>
             <small>Link zu den Folien: <a href="https://terrestris.github.io/fossgis2024">https://terrestris.github.io/fossgis2024</a></small>
-          </div>
+          </div>  
           <footer>
             <img src="../img/terrestris.svg" height="30px"/>
             <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
@@ -194,10 +195,10 @@
           <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
             <!-- TODO maybe add an image -->
             <blockquote cite="https://de.wikipedia.org/wiki/Business_Intelligence">
-              [...] Business Intelligence (Abkürzung BI), ist ein der Wirtschaftsinformatik zuzuordnender Begriff, der Verfahren und Prozesse zur systematischen Analyse des eigenen Unternehmens bezeichnet. Dies umfasst die Sammlung, Auswertung und Darstellung von Daten in elektronischer Form.
+              [...] Business Intelligence (Abkürzung BI), ist ein der Wirtschaftsinformatik zuzuordnender Begriff, der Verfahren und Prozesse zur systematischen Analyse des eigenen Unternehmens bezeichnet. Dies umfasst die <strong>Sammlung, Auswertung und Darstellung von Daten</strong> in elektronischer Form.
             </blockquote>
             <blockquote cite="https://de.wikipedia.org/wiki/Business_Intelligence">
-              Ziel ist die Gewinnung von Erkenntnissen aus den im Unternehmen vorhandenen Daten zur Unterstützung von Managemententscheidungen.
+              Ziel ist die Gewinnung von <strong>Erkenntnissen</strong> aus den im Unternehmen vorhandenen Daten zur <strong>Unterstützung von Managemententscheidungen.</strong>
             </blockquote>
             <cite style="display: inline-flex; justify-content: end; font-size: smaller">Quelle: Wikipedia</cite>
           </div>
@@ -208,40 +209,9 @@
           </footer>
         </section>
 
-        <!-- <section>
-          <h2 class="slide-header">Dashboards in Intelligence Prozessen</h2>
-          <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
-            <div class="slide-content-horizontal gap">
-              <div>
-                <h3>Technische Phasen der BI</h3>
-                <ol>
-                  <li>Datenerfassung/-lieferung</li>
-                  <li>Datenanalyse/-discovery</li>
-                  <li>Wissensvermittlung/-verteilung</li>
-                </ol>
-              </div>
-              <div>
-                <h3>Konzeptionelle Phasen der BI</h3>
-                <ol>
-                  <li>Fragestellung/Hypothese</li>
-                  <li>Identifikation notwendiger (Roh-)daten</li>
-                  <li>Darstellung und Analyse</li>
-                  <li>Wissensvermittlung</li>
-                </ol>
-              </div>
-            </div>
-          </div>
-          <footer>
-            <img src="../img/terrestris.svg" height="30px"/>
-            <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
-            <div></div>
-          </footer>
-        </section> -->
-
         <section>
           <h2 class="slide-header">Dashboards in Intelligence Prozessen</h2>
           <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
-                <!-- TODO aufzeigen wo hier Dashboards ins Spiel kommen und stark betonen -->
             <img src="../img/superset-bi-phases.svg" height="500px"/>
           </div>
           <footer>
@@ -254,7 +224,6 @@
         <section>
           <h2 class="slide-header">Dashboards in Intelligence Prozessen</h2>
           <div class="slide-content-default" style="justify-content: center; align-items: stretch;">
-                <!-- TODO aufzeigen wo hier Dashboards ins Spiel kommen und stark betonen -->
             <img src="../img/superset-bi-phases-highlighted2.svg" height="500px"/>
           </div>
           <footer>
@@ -309,6 +278,7 @@
               </div>
               <div style="flex: 2; text-align: left">
                 <h4>Szenario</h4>
+                TODO wording
                 <p>
                   Ein Unternehmen aus dem Energiesektor ist im Ausbau von Erneuerbaren Energien tätig.
                 </p>
@@ -316,9 +286,9 @@
                   Es fallen tagtäglich unzählige Daten über den Handel, Erzeugung, Speicher und den Verbrauch von Strom an.
                 </p>
                 <p>
-                  Als Bestandteil ihres Managementprozesses möchte das Unternehmen kontinuierlich 
-                  eine Prozessanalyse durchführen
-                  um darauf basierend vergangene Entscheidungen zu evaluieren um sich für die Zukunft aufzustellen.
+                  Als Bestandteil des Managementprozesses möchte das Unternehmen kontinuierlich 
+                  eine Prozessanalyse durchführen,
+                  um darauf basierend vergangene Entscheidungen zu evaluieren, um sich für die Zukunft aufzustellen.
                 </p>
               </div>
             </div>
@@ -354,14 +324,14 @@
               <div style="flex: 2; text-align: left">
                 <h4>Szenario</h4>
                 <p>
-                  Eine Stadt will und muss die Verkehrsziele des neuen Radverkehrsplans evaluieren.
+                  Eine Stadt evaluiert die Verkehrsziele des neuen Radverkehrsplans.
                 </p>
                 <p>
-                  Es stehen u.a. Daten der innerstädtischen Verkehrsinfrastruktur sowie Messungen von Verkehrszählungen und Umweltdaten zur Verfügung.
+                  Es stehen u.a. Daten der innerstädtischen Verkehrsinfrastruktur sowie zu Verkehrszählungen und Umweltdaten zur Verfügung.
                 </p>
                 <p>
-                  Als Bestandteil der Umsetzung des Radverkehrsziels möchte die Behörde die Entwicklung des Radverkehrsziels
-                  datengestützt analysieren, und hierbei besonderen Fokus auf die laufende Weiterentwicklung und den Effekt
+                  Als Bestandteil der Umsetzung des Radverkehrsziels möchte die Behörde die Entwicklung
+                  <strong>datengestützt analysieren</strong>, und hierbei besonderen Fokus auf die laufende Weiterentwicklung und den Effekt
                   der bisherigen Umsetzungen legen.
                 </p>
               </div>
@@ -435,9 +405,14 @@
         <section>
           <h2 class="slide-header">Fazit</h2>
           <div class="slide-content-default" style="justify-content: center; align-items: stretch; margin-right: -70px">
-            TODO add text here
-
-            - collect keypoints of the different dashboards
+          <ul>
+            <li>Aufbereitung von Informationen aus verschiendensten Datensätzen</li>
+            <li>Gut geeignet als Decision Support System</li>
+            <li>Monitoring Tool </li>
+            <li>Interaktivität: Tiefgehendere Analysen und Fokussierung</li>
+            <li>Nicht nur für Business sondern auch hilfreich für kommunale oder partizipatorische Fragestellungen</li>
+            <li>Erweiterbarkeit: Eigene Plugins für raumzeitliche Analysen in Superset</li>
+          </ul>
           </div>
           <footer>
             <img src="../img/terrestris.svg" height="30px"/>
@@ -446,14 +421,14 @@
           </footer>
         </section>
 
-        <section>
+        <!-- <section>
           <h2 class="slide-header">Szenario 2: Business Intelligence Energiebranche</h2>
-          <div class="slide-content-default" style="justify-content: center; align-items: stretch; margin-right: -70px">
+          <div class="slide-content-default" style="justify-content: center; align-items: stretch; margin-right: -70px"> -->
             <!-- TODO styling -->
             <!-- Es wird nicht zu jedem Punkt ein Chart geben! -->
-            <img src="../img/superset-noun-renewable-energy-81668.svg" height="100px"/>
+            <!-- <img src="../img/superset-noun-renewable-energy-81668.svg" height="100px"/> -->
             <!-- TODO add credit to https://thenounproject.com/icon/renewable-energy-81668/ -->
-            <span class="question-box">Aktuelle Marktentwicklungen der EE</span>
+            <!-- <span class="question-box">Aktuelle Marktentwicklungen der EE</span>
             <span>Wie kommt der Ausbau der EE voran? (National, Regional)</span>
             <span>In welchen Regionen / Kreisen gibt es Potential?</span>
             <span>Welche laufenden Bauprojekte gibt es im Unternehmen?</span>
@@ -468,19 +443,19 @@
             <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
             <div></div>
           </footer>
-        </section>
+        </section> -->
 
-        <section>
+        <!-- <section>
           <h2 class="slide-header">Szenario 3: Kommunales Dashboard</h2>
           <div class="slide-content-default" style="justify-content: center; align-items: stretch; margin-right: -70px">
-            <!-- TODO styling -->
+            TODO styling
             <img src="../img/superset-noun-urban-planning-6190907.svg" height="100px"/>
-            <!-- TODO add credit to https://thenounproject.com/icon/urban-planning-6190907 -->
-            <!-- Fragestellungen -->
+            TODO add credit to https://thenounproject.com/icon/urban-planning-6190907
+            Fragestellungen
             <span class="question-box">Wie weit sind wir vom Radverkehrsziel entfernt?</span>
             <span>Wie hat sich der Radverkehr im Vergleich zu anderen Verkehrsarten entwickelt?</span>
             <span>Wie kommt der Ausbau der Radinfrastruktur voran?</span>
-            <span>Sind bereits Effekte der Radverkehrsmaßnahmen zu sehen? (Staulänge, Parkraum)</span>
+            <span>Sind bereits Effekte der Radverkehrsmaßnahmen zu sehen? (Staulänge, Parkraum)</span> -->
             
             <!-- Notes on datasets
             Datensatz 1: Pro zeitpunkt pro modal eine zeile
@@ -515,13 +490,13 @@
               - Check: Kostenrelevanz bei Radverkehr
               - Budget -->
 
-          </div>
+          <!-- </div>
           <footer>
             <img src="../img/terrestris.svg" height="30px"/>
             <span>Interaktive Dashboards zur Optimierung von Intelligence Prozessen, FOSSGIS 2024, Hamburg</span>
             <div></div>
           </footer>
-        </section>
+        </section> -->
 
         <section>
           <h2>Imprint</h2>
@@ -553,7 +528,8 @@
                 Die Folien sind unter der <a href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a>
                 Lizenz veröffentlicht.<br />
                 <a href="https://terrestris.github.io/fossgis2024/">terrestris.github.io/fossgis2024</a><br />
-                <a href="https://github.com/terrestris/fossgis2024">git repository</a>
+                <a href="https://github.com/terrestris/fossgis2024">git repository</a><br/>
+                <span><strong>Icons:</strong> The Noun Project Krisada, Happy Girl, miftakhudin CC BY 3.0 License. Fontawesome CC BY 4.0 License</span>
               </small>
             </p>
           </div>
