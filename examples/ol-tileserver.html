@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ol-tileserver</title>
+  <style>
+    .show-dialog {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .dialog {
+      display: none;
+    }
+    .show-dialog .dialog {
+      background-color: white;
+      display: block;
+      flex-shrink: 0;
+      border: 1px solid #888;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  </style>
+  <script type="module" crossorigin src="../assets/ol-tileserver.html-DCqXqRsP.js"></script>
+  <link rel="modulepreload" crossorigin href="../assets/Tile-CNT6xDI4.js">
+  <link rel="modulepreload" crossorigin href="../assets/XYZ-DYJ4F8ul.js">
+  <link rel="stylesheet" crossorigin href="../assets/Tile-CSy_vbSQ.css">
+  <link rel="stylesheet" crossorigin href="../assets/style-BxmjK10I.css">
+</head>
+<body>
+  <div id="map" class="show-dialog">
+    <div class="dialog">
+      <form method="dialog" id="key-form">
+        <label>Please enter the URL of your ol-tileserver:
+          <input id="baseurl" name="key" value="http://localhost:3000/">
+        </label>
+        <button type="submit">show map</button>
+      </form>
+    </div>
+  </div>
+</html>
