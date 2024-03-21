@@ -208,8 +208,7 @@
 				<h3>Über was wir sprechen wollen:</h3>
 				<ul>
 					<li>Begriffsklärungen</li>
-					<li>Einige Produkte / Software</li>
-					<li>Beispiele</li>
+					<li>Einige Beispiele / Software / Produkte</li>
 					<li>Offene Fragen</li>
 				</ul>
 			</section>
@@ -316,6 +315,20 @@ inkl. nioce graphic
 			</section>
 
 			<section>
+				<h2>... auf der Konferenz (mind.)</h2>
+				<ul class="r-fit-text">
+					<li>Verarbeitung hochaufgelöster Umweltdaten auf Basis von OGC API Processes</li>
+					<li>Automatisierte Bestimmung der Straßenbeschaffenheit mit Machine Learning</li>
+					<li>Workflow zur Erstellung von Trainingsdaten für die KI-Gebäudeerkennung</li>
+					<li>Evaluierung von Hausumringen: ALKIS, OSM, Microsoft und unsere KI im Vergleich</li>
+					<li>KI-Gebäudeerkennung – Deep-Learning-Modelle zur Aktualisierung der ALKIS-Gebäude</li>
+					<li>Open Source and Web-Based GeoAI tool for Transparent Forest Fire Prediction</li>
+					<li>Einsatz von Machine Learning zur Erstellung von XPlanGML </li>
+					<li>Oberflächenklassifikation aus Luft- und Satellitenbildern mit Hilfe von actinia (WS)</li>
+				</ul>
+			</section>
+
+			<section>
 				<h3>Überwachte Oberflächenklassifizierung mit GRASS GIS</h3>
 				<div style="display: flex; font-size: 0.7em;">
 					<div style="flex: 5">
@@ -344,6 +357,23 @@ inkl. nioce graphic
 						</p>
 					</div>
 				</div>
+			</section>
+
+			<section data-background-video="../video/ki/chatgpt-doing-ol.mp4" data-background-size="contain">
+				<!--
+					Ich möchte, dass Du mir hilfst, eine OpenLayers-basierte Webkarte zu erstellen.
+
+				Kannst Du mir den kompletten Code für eine einfache HTML-Seite generieren, in welchem eine OpenLayers Karte eingebettet ist, die OpenStreetMap-Kacheln anzeigt?
+
+				Die Karte soll auf Hamburg zentriert sein und bei einem Klick in die Karte soll in einem alert-fenster die geklickte Koordinate ausgeben werden.
+
+				Nutze bitte als Quellen für den OpenLayers Bibliothek (CSS und JavaScript) folgende Resourcen:
+
+				* https://cdn.jsdelivr.net/npm/ol@v9.0.0/ol.css
+				* https://cdn.jsdelivr.net/npm/ol@v9.0.0/dist/ol.js
+
+				Bitte gib mir nur den Code und keine Erläuterung.
+				-->
 			</section>
 
 			<section>
@@ -381,9 +411,15 @@ inkl. nioce graphic
 				</div>
 			</section>
 
+			<section data-background-video="../video/ki/sam.mp4" data-background-size="contain">
+				<!--		https://github.com/facebookresearch/segment-anything?tab=readme-ov-file
+				* https://samgeo.gishub.org/examples/satellite/
+			-->
+			</section>
+
 			<section style="font-size: 0.7em; text-align:center" data-markdown>
 				<textarea data-template>
-			## Einige Produkte / Software - Teil 1
+			## Einige Produkte / Software ...
 			- __GRASS GIS__
 				- [r.learn.ml2](https://grass.osgeo.org/grass84/manuals/addons/r.learn.ml2.html) (scikit-learn, MLP möglich) - ML
 				- [i.ann.maskrcnn](https://grass.osgeo.org/grass82/manuals/addons/i.ann.maskrcnn.html) (u.a. TensorFlow) - DL mit CNN
@@ -395,43 +431,6 @@ inkl. nioce graphic
 					- [torchgeo](https://torchgeo.readthedocs.io/en/stable/)
 				beinhaltet u.a. Datensätze, Trainingsdaten und vortrainierte Modelle, auch speziell für Sentinel und Landsat
 			</textarea>
-			</section>
-
-			<section>
-				<h2>Mehr Beispiele auf der Konferenz (mind.)</h2>
-				<ul class="r-fit-text">
-					<li>Verarbeitung hochaufgelöster Umweltdaten auf Basis von OGC API Processes</li>
-					<li>Automatisierte Bestimmung der Straßenbeschaffenheit mit Machine Learning</li>
-					<li>Workflow zur Erstellung von Trainingsdaten für die KI-Gebäudeerkennung</li>
-					<li>Evaluierung von Hausumringen: ALKIS, OSM, Microsoft und unsere KI im Vergleich</li>
-					<li>KI-Gebäudeerkennung – Deep-Learning-Modelle zur Aktualisierung der ALKIS-Gebäude</li>
-					<li>Open Source and Web-Based GeoAI tool for Transparent Forest Fire Prediction</li>
-					<li>Einsatz von Machine Learning zur Erstellung von XPlanGML </li>
-					<li>Oberflächenklassifikation aus Luft- und Satellitenbildern mit Hilfe von actinia (WS)</li>
-				</ul>
-			</section>
-
-			<section data-background-video="../video/ki/chatgpt-doing-ol.mp4" data-background-size="contain">
-<!--
-	Ich möchte, dass Du mir hilfst, eine OpenLayers-basierte Webkarte zu erstellen.
-
-Kannst Du mir den kompletten Code für eine einfache HTML-Seite generieren, in welchem eine OpenLayers Karte eingebettet ist, die OpenStreetMap-Kacheln anzeigt?
-
-Die Karte soll auf Hamburg zentriert sein und bei einem Klick in die Karte soll in einem alert-fenster die geklickte Koordinate ausgeben werden.
-
-Nutze bitte als Quellen für den OpenLayers Bibliothek (CSS und JavaScript) folgende Resourcen:
-
-* https://cdn.jsdelivr.net/npm/ol@v9.0.0/ol.css
-* https://cdn.jsdelivr.net/npm/ol@v9.0.0/dist/ol.js
-
-Bitte gib mir nur den Code und keine Erläuterung.
--->
-			</section>
-
-			<section data-background-video="../video/ki/sam.mp4" data-background-size="contain">
-				<!--		https://github.com/facebookresearch/segment-anything?tab=readme-ov-file
-				* https://samgeo.gishub.org/examples/satellite/
-			-->
 			</section>
 
 			<section>
@@ -515,16 +514,7 @@ Bitte gib mir nur den Code und keine Erläuterung.
 				<h3>Offene Fragen - Umwelt und Ethik - "nachhaltige KI"</h3>
 				<div style="display: flex;font-size: 0.7em" class="r-stretch">
 					<div style="flex: 1">
-						<p>Ist KI ein Mittel gegen die Klimakrise?</p>
-						<p style="font-size:0.7em">Ressourcenverbrauch · Energie- oder Mobilitätswende · Erforschung neuer Materialien</p>
-						<img style="margin:0;padding:0;float:left;width:40%" src="../img/ki-ecosia.jpg" alt="">
-						<div style="width:60%;float:left;">
-							<img style="margin:0;padding:0;" src="../img/ki-un-ai.jpg" alt="">
-							<img style="margin:0;padding:0;" src="../img/ki-climatechange-ai.jpg" alt="">
-						</div>
-					</div>
-					<div style="flex: 1">
-						<p>Oder ist KI selbst klimaschädlich?</p>
+						<p>Ist KI selbst klimaschädlich?</p>
 						<p style="font-size:0.7em">Energieverbrauch · CO2-Emissionen · Umweltschäden · Wasserbedarf & -knappheit · Bedarf an Mineralien</p>
 						<!-- Risiken:
 							- Die enorm gestiegene Nachfrage nach KI-Technologien führt auch zu einem immer größeren Wasserbedarf
@@ -552,6 +542,15 @@ Bitte gib mir nur den Code und keine Erläuterung.
 							<footer>—Albert Einstein</footer>
 						</blockquote>
 						<img width="" style="margin:0;padding:0" src="../img/ki-generated-developer.jpg" alt="">
+					</div>
+					<div style="flex: 1">
+						<p>... oder ist KI ein Mittel gegen die Klimakrise?</p>
+						<p style="font-size:0.7em">Ressourcenverbrauch · Energie- oder Mobilitätswende · Erforschung neuer Materialien</p>
+						<img style="margin:0;padding:0;float:left;width:40%" src="../img/ki-ecosia.jpg" alt="">
+						<div style="width:60%;float:left;">
+							<img style="margin:0;padding:0;" src="../img/ki-un-ai.jpg" alt="">
+							<img style="margin:0;padding:0;" src="../img/ki-climatechange-ai.jpg" alt="">
+						</div>
 					</div>
 				</div>
 				<!--
