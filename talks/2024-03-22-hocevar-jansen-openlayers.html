@@ -153,27 +153,8 @@ const map = new Map({
 });</code></pre>
 			</section>
 
-			<section id="hello-hamburg">
-				<h2>Hallo Hamburg</h2>
-				<pre><code class="language-javascript">import "ol/ol.css";
-import { apply } from "ol-mapbox-style";
-import { fromLonLat } from "ol/proj";
-
-const basemap =
-	"https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/" +
-	"styles/bm_web_col.json";
-
-apply("map", basemap).then((map) =>
-	map.getView().animate({
-		center: fromLonLat([10.01, 53.55]),
-		zoom: 9.5,
-	}),
-);</code></pre>
-			</section>
-
-			<section id="hello-hamburg-example">
-				<h2>Hallo Hamburg</h2>
-				<iframe src="../examples/ol-hellohamburg.html" class="stretch"></iframe>
+			<section id="builder-example">
+				<iframe src="../examples/ol-builder.html" class="stretch"></iframe>
 			</section>
 
 			<section id="browser-app">

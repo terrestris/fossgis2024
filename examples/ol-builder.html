@@ -11,6 +11,7 @@
       height: 100%;
       margin: 0;
       padding: 0;
+      background-color: rgba(255,255,255, 0.7);
     }
 
     #wrap {
@@ -33,11 +34,11 @@
     .item {
       padding: 3px;
       flex: 1;
-      font-size: 1.9em;
+      font-size: 1.5em;
       color: color #333;
       background-color: rgba(30, 30, 30, 0.2);
       border: 1px solid rgba(30, 30, 30, 0.8);
-      margin: 1em 0.2em;
+      margin: 0.4em;
       text-align: center;
       font-family: sans-serif;
       display: flex;
@@ -49,15 +50,23 @@
 
     #code {
       flex: 1;
-      font-size: 1.9em;
+      font-size: 1.4em;
       background-color: white;
-      padding: 0 1em;
+      padding: 0 0.4em;
       margin: 0;
     }
 
     #map {
       flex: 5
     }
+
+.item[draggable="true"] {
+    cursor: move; /* fallback */
+    cursor: grab;
+}
+.item[draggable="true"]:active {
+    cursor: grabbing;
+}
   </style>
 </head>
 

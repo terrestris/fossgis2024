@@ -69,12 +69,13 @@ map.addLayer(layer);`
       let view = map.getView();
       view.animate({
         zoom: 16,
-        center: [9.9696, 53.4620]
-      }); 
-      updateCodePart(`let view = map.getView();
-view.animate({
+        center: [9.9696, 53.4620],
+        duration: 4000
+      });
+      updateCodePart(`map.getView().animate({
   zoom: 16,
-  center: [9.9696, 53.4620]
+  center: [9.9696, 53.4620],
+  duration: 4000
 });`
       );
       break;
@@ -85,16 +86,14 @@ view.animate({
           map.addLayer(window.geb);
         }
       };
-      // https://basemap.de/data/produkte/web_vektor/styles/bm_web_bin.json
       let url = "https://sgx.geodatenzentrum.de/gdz_basemapde_vektor" +
         "/styles/bm_web_col.json"
       apply(map, url).then(reorder).catch(reorder);
       
       updateCodePart(`import { apply } from "ol-mapbox-style";
-apply(
-  map,
-  "https://sgx.geodatenzentrum.de/gdz_basemapde_vektor/styles/bm_web_top.json"
-);`
+let url = "https://sgx.geodatenzentrum.de/" +
+  "gdz_basemapde_vektor/styles/bm_web_col.json"
+apply( map, url);`
       );
       break;
     case 'fossgis-geb':
