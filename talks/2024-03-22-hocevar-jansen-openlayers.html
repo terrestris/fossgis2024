@@ -253,6 +253,97 @@ markers.on('change', () => {
 </code></pre>
 			</section>
 
+			<section id="browser">
+				<h2>OpenLayers ohne Browser</h2>
+			</section>
+
+			<section id="ol-tileserver-deploy">
+				<h2>OpenLayers am Server</h2>
+				<a target="_blank" href="https://github.com/ahocevar/ol-tileserver/blob/main/README.md">ol-tileserver</a>
+			</section>
+
+			<section id="no-browser-usecases">
+				<h2>Beispiele</h2>
+				<ul>
+					<li>Vektorformate konvertieren</li>
+					<li>Offline Karten</li>
+					<li>Map Rendering am Server</li>
+				</ul>
+			</section>
+
+			<section id="vector-convert">
+				<h2>Vektorformate konvertieren</h2>
+				<pre><code class="language-javascript">import { readFileSync, writeFileSync } from 'fs';
+import { TopoJSON, GeoJSON } from 'ol/format';
+
+const in = readFileSync('input.topojson', 'utf8');
+const features = new TopoJSON().readFeatures(in);
+const out = new GeoJSON().writeFeatures(features);
+writeFileSync('output.json', out);</code></pre>
+			</section>
+
+			<section id="offline-maps">
+				<h2>Offline Karten</h2>
+				<img src="../img/tiles.gif">
+			</section>
+
+			<section id="serverside-map-rendering">
+				<h2>Map Rendering am Server</h2>
+				<ul>
+					<li>Einfache Karten mit jsdom+canvas</li>
+					<li>Komplexere Karten mit puppeteer</li>
+					<li>Anwedungsmöglichkeiten: PDF-Karten, Thumbnails, ...</li>
+					<li>... oder ein Tileserver!</lli>
+				</ul>
+			</section>
+
+			<section id="tileserver">
+				<h2>ol-tileserver</h2>
+				<code>`${baseUrl}tiles/11/1080/662.png?style=${styleUrl}`</code>
+				<br><br><code>z=11, x=1080, y=662, type="png"</code>
+				<pre><code class="language-javascript">const resolution = tilegrid.getResolution(z);
+const center = tilegrid.getTileCoordCenter([z, x, y]);
+await page.evaluate(
+	(center, resolution) => requestMapImage(center, resolution),
+	center,
+	resolution,
+);
+result = await page.screenshot({
+	encoding: 'binary',
+	type,
+	clip: { x: 256, y: 256, width: 512, height: 512 },
+});</code></pre>
+			</section>
+
+			<section id="consume-tileserver">
+				<h2>ol-tileserver</h2>
+				<h3>zurück im Browser, in OpenLayers</h3>
+				<pre><code class="language-javascript">new TileLayer({
+	source: new XYZ({
+		url: `${baseUrl}tiles/{z}/{x}/{y}.png?style=${styleUrl}`,
+		tileSize: 512,
+	})
+})</code></pre>
+			</section>
+
+			<section id="tileserver-example">
+				<h2>ol-tileserver</h2>
+				<iframe src="../examples/ol-tileserver.html" class="stretch"></iframe>
+			</section>
+
+			<section>
+				<h2>There's one more thing</h2>
+			</section>
+
+			<section>
+				<h2>Bitte um Mithilfe</h2>
+				<ul>
+					<li><a target="_blank" href="https://github.com/sponsors/ahocevar/">https://github.com/sponsors/ahocevar/</a></li>
+					<li>Pull requests welcome</li>
+					<li><a target="_blank" href="https:/openlayers.org/">https://openlayers.org/</a></li>
+				</ul>
+			</section>
+
 			<section id="thanks-questions">
 				<h2>Danke!</h2>
 				<h2>Fragen oder Anmerkungen?</h2>
